@@ -1,0 +1,36 @@
+/**
+* ETML
+* Author : Daniel Baltensperger
+* Date : 30.05.2016
+* Description : Main stylesheet of the forum
+**/
+
+
+/******** HTML ATTRIBUTE **********************************************************************************************************/
+body{
+    margin-top: 0px;
+}
+/******** Id **********************************************************************************************************************/
+#mainSectionHome{
+    width : 1080px;
+    height: 50px;
+    background-color: red;
+}
+
+.navConnexion{
+    text-align: right;
+}
+
+/******** Class *******************************************************************************************************************/
+
+.Container{
+    height: 300px;
+}
+
+.menuHeader{
+    width : 1080px;
+    height: 50px;
+    background-color: dimgray;
+    text-align: center;
+    font-family: fantasy;
+}
