@@ -1,0 +1,13 @@
+Domotique :
+
+	WakeOnLan
+	ShutdownOnLan
+	Lancement Appli
+	Visualisez Appli
+	Fermer Appli
+	Visualisez stats (CPU, RAM, etc ...)
+	Controle Vocal
+
+	
+	
+	

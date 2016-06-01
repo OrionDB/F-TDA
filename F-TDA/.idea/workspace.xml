@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0455cee5-a6f7-4fff-b802-77a625c9f108" name="Default" comment="" />
+    <ignored path="F-TDA.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="F-TDA" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="layout_header.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/php/_Layout/layout_header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="6" selection-start="69" selection-end="69" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout_menu.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/php/_Layout/layout_menu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="6" selection-start="707" selection-end="707" vertical-scroll-proportion="0.2937788" vertical-offset="0" max-vertical-offset="868">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/php/register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="22" selection-start="859" selection-end="859" vertical-scroll-proportion="-5.923077" vertical-offset="271" max-vertical-offset="1360">
+              <folding>
+                <element signature="e#6#195#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forums.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/php/forums.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="31" selection-start="759" selection-end="1052" vertical-scroll-proportion="-13.076923" vertical-offset="204" max-vertical-offset="2040">
+              <folding>
+                <marker date="1464786323071" expanded="true" signature="2124:2230" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2234:2821" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2234:2554" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2234:2554" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2286:2554" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2286:2554" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2339:2554" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2968:3019" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="2968:3094" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3098:3687" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3098:3290" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3098:3687" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3150:3290" placeholder="..." />
+                <marker date="1464786323071" expanded="true" signature="3203:3290" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/php/home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="0" selection-start="0" selection-end="3096" vertical-scroll-proportion="-31.576923" vertical-offset="488" max-vertical-offset="1411">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginProcess.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/php/loginProcess.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="867">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/php/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="57" selection-start="912" selection-end="951" vertical-scroll-proportion="-11.5" vertical-offset="347" max-vertical-offset="1241">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout_footer.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/php/_Layout/layout_footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="6" selection-start="608" selection-end="608" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="170">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="screen.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/css/screen.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="237" column="27" selection-start="3845" selection-end="3845" vertical-scroll-proportion="-21.615385" vertical-offset="3467" max-vertical-offset="5355">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbAccess.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/php/Class/DbAccess.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="25" selection-start="2862" selection-end="2862" vertical-scroll-proportion="-13.115385" vertical-offset="1223" max-vertical-offset="2091">
+              <folding>
+                <element signature="e#6#110#0" expanded="true" />
+                <marker date="1464787769125" expanded="true" signature="1538:1582" placeholder="SELECT * FRO..t_forum..." />
+                <marker date="1464787769125" expanded="true" signature="1603:1646" placeholder="SELECT * FRO..t_forum..." />
+                <marker date="1464787769125" expanded="true" signature="2170:2527" placeholder="SELECT COUNT..t_forum..." />
+                <marker date="1464787769125" expanded="true" signature="2170:2267" placeholder="SELECT COUNT..t_forum..." />
+                <marker date="1464787769125" expanded="true" signature="2170:2266" placeholder="SELECT COUNT..t_forum..." />
+                <marker date="1464787769125" expanded="true" signature="2170:2259" placeholder="SELECT COUNT..t_forum..." />
+                <marker date="1464787769125" expanded="true" signature="2170:2259" placeholder="SELECT COUNT..t_forum..." />
+                <marker date="1464787769125" expanded="true" signature="2290:2389" placeholder="SELECT forNa..t_forum..." />
+                <marker date="1464787769125" expanded="true" signature="3005:3060" placeholder="SELECT memNa..t_member..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/src/php/_Layout/layout_header.html" />
+        <option value="$PROJECT_DIR$/src/php/_Layout/layout_menu.html" />
+        <option value="$PROJECT_DIR$/src/php/_Layout/layout_footer.html" />
+        <option value="$PROJECT_DIR$/src/php/home.php" />
+        <option value="$PROJECT_DIR$/src/php/_Layout/layout_header.php" />
+        <option value="$PROJECT_DIR$/src/php/_Layout/layout_footer.php" />
+        <option value="$PROJECT_DIR$/src/php/forums.php" />
+        <option value="$PROJECT_DIR$/src/php/loginProcess.php" />
+        <option value="$PROJECT_DIR$/src/php/Class/DbAccess.php" />
+        <option value="$PROJECT_DIR$/src/php/register.php" />
+        <option value="$PROJECT_DIR$/resources/css/screen.css" />
+        <option value="$PROJECT_DIR$/src/php/_Layout/layout_menu.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_Layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="F-TDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0455cee5-a6f7-4fff-b802-77a625c9f108" name="Default" comment="" />
+      <created>1464760965551</created>
+      <updated>1464760965551</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.125" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="40" selection-start="41" selection-end="41" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="136">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/_Layout/layout_footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="608" selection-end="608" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="57" selection-start="912" selection-end="951" vertical-scroll-proportion="-11.5" vertical-offset="347" max-vertical-offset="1241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/loginProcess.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/Class/DbAccess.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="25" selection-start="2862" selection-end="2862" vertical-scroll-proportion="-13.115385" vertical-offset="1223" max-vertical-offset="2091">
+          <folding>
+            <element signature="e#6#110#0" expanded="true" />
+            <marker date="1464787769125" expanded="true" signature="1538:1582" placeholder="SELECT * FRO..t_forum..." />
+            <marker date="1464787769125" expanded="true" signature="1603:1646" placeholder="SELECT * FRO..t_forum..." />
+            <marker date="1464787769125" expanded="true" signature="2170:2527" placeholder="SELECT COUNT..t_forum..." />
+            <marker date="1464787769125" expanded="true" signature="2170:2267" placeholder="SELECT COUNT..t_forum..." />
+            <marker date="1464787769125" expanded="true" signature="2170:2266" placeholder="SELECT COUNT..t_forum..." />
+            <marker date="1464787769125" expanded="true" signature="2170:2259" placeholder="SELECT COUNT..t_forum..." />
+            <marker date="1464787769125" expanded="true" signature="2170:2259" placeholder="SELECT COUNT..t_forum..." />
+            <marker date="1464787769125" expanded="true" signature="2290:2389" placeholder="SELECT forNa..t_forum..." />
+            <marker date="1464787769125" expanded="true" signature="3005:3060" placeholder="SELECT memNa..t_member..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/_Layout/layout_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="6" selection-start="69" selection-end="69" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="0" selection-end="3096" vertical-scroll-proportion="-31.576923" vertical-offset="488" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/forums.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="31" selection-start="759" selection-end="1052" vertical-scroll-proportion="-13.076923" vertical-offset="204" max-vertical-offset="2040">
+          <folding>
+            <marker date="1464786323071" expanded="true" signature="2124:2230" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2234:2821" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2234:2554" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2234:2554" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2286:2775" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2286:2554" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2286:2554" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2339:2554" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2968:3019" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="2968:3094" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3098:3687" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3098:3290" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3098:3687" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3150:3641" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3150:3290" placeholder="..." />
+            <marker date="1464786323071" expanded="true" signature="3203:3290" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="22" selection-start="859" selection-end="859" vertical-scroll-proportion="-5.923077" vertical-offset="271" max-vertical-offset="1360">
+          <folding>
+            <element signature="e#6#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/css/screen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="237" column="27" selection-start="3845" selection-end="3845" vertical-scroll-proportion="-21.615385" vertical-offset="3467" max-vertical-offset="5355">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/_Layout/layout_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="6" selection-start="707" selection-end="707" vertical-scroll-proportion="0.2937788" vertical-offset="0" max-vertical-offset="868">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
