@@ -16,12 +16,12 @@
 		<meta name="description" content="This is the new forum of the TDA" />
 		
 		<!-- CSS and JS link -->
-		<link rel="stylesheet" type="text/css" media="screen" href="screen.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="../../resources/css/screen.css" />
 	</head>
 	<!-- End Header -->
 	
 	<!-- Start Body -->
-	<body id="bhome">
+	<body class="bhome">
 		<div id="header">
 		  <h1>Team d'Ares - Forum Officiel</h1>
 		</div>
@@ -29,21 +29,21 @@
 		<!-- Start Navigation bar -->
 		<div id="navigation">
 		  <ul>
-			<li id="lhome"><a href="#00">Home</a></li>
-			<li id="lproducts"><a href="#01">Forum</a></li>
-			<li id="lsolutions"><a href="#02">Membre</a></li>
-			<li id="lmysterious"><a href="#03">Profil</a></li>
-			<li id="labout"><a href="#04">Messagerie</a></li>
-			<li id="lcontact"><a href="#05">Connexion</a></li>
+			<li class="lhome"><a href="#00">Home</a></li>
+			<li class="lproducts"><a href="#01">Forum</a></li>
+			<li class="lsolutions"><a href="#02">Membre</a></li>
+			<li class="lmysterious"><a href="#03">Profil</a></li>
+			<li class="labout"><a href="#04">Messagerie</a></li>
+			<li class="lcontact"><a href="#05">Connexion</a></li>
 		  </ul>
 		</div>
 		
 		<!-- End Navigation bar -->
 		
 		
-		<div id="wrapper">
-		  <div id="content-wrapper">
-			<div id="content">
+		<div class="wrapper">
+		  <div class="content-wrapper">
+			<div class="content">
 			  <h4>Forums</h4>
 			  
 			  <!-- Start First List 1 columns -->
@@ -68,7 +68,7 @@
 		  </div>
 		  
 		</div>
-		<div id="footer">
+		<div class="footer">
 		  <p>Copyright &copy; 2015-2016 Team d'Ares. All rights reserved. </p>
 		  <p> Initial Design by <a href="http://www.nikhedonia.com/" title="SimplyGold">Sadhana Ganapathiraju</a>, Editing Design by <a href="">Daniel Baltensperger</a>. </p>
 		  <p> <a href="#">Terms of Service</a> | <a href="#">Privacy</a> | <a href="#">Contact</a> | <a href="#">About</a> | <a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0 Strict">Xhtml</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css2" title="Valid CSS 2.0 Strict">Css</a> </p>

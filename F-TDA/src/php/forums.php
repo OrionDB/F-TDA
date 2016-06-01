@@ -16,79 +16,99 @@
 		<meta name="description" content="This is the new forum of the TDA" />
 		
 		<!-- CSS and JS link -->
-		<link rel="stylesheet" type="text/css" media="screen" href="screen.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="../../resources/css/screen.css" />
 	</head>
 	<!-- End Header -->
 	
 	<!-- Start Body -->
-	<body id="babout">
-		<div id="header">
-		  <h1>Team d'Ares - Forum Officiel</h1>
-		</div>
+	<body class="bForum">
+		<?php include("_Layout/layout_header.php") ?>
 		
 		<!-- Start Navigation bar -->
-		<div id="navigation">
-		  <ul>
-			<li id="lhome"><a href="#00">Home</a></li>
-			<li id="lproducts"><a href="#01">Forum</a></li>
-			<li id="lsolutions"><a href="#02">Membre</a></li>
-			<li id="lmysterious"><a href="#03">Profil</a></li>
-			<li id="labout"><a href="#04">Messagerie</a></li>
-			<li id="lcontact"><a href="#05">Connexion</a></li>
-		  </ul>
-		</div>
-		
+        <?php include("_Layout/layout_menu.php") ?>
 		<!-- End Navigation bar -->
-		
-		
-		<div id="wrapper">
-		  <div id="content-wrapper">
-			<div id="content">
+
+        <?php
+        include("Class/DbAccess.php");
+        $work = new DbAccess();
+
+        $forums = $work->getAllForumsFirstLevel();
+
+        //var_dump($forums);
+        //print_r($forums);
+        //echo count($forums);
+
+        ?>
+
+
+        <!-- Div where all the forums are printed -->
+		<div class="wrapper">
+		  <div class="content-wrapper">
+			<div class="content">
 			  <h4>Forums</h4>
 			  
 			  <!-- Start First List 1 columns -->
 			  
 				  <dl>
-				  <table>
-					<tr>
-						<dt>Passerelle</dt>
-						<dd> Cette ici que les décisions à propos de la flotte vous sont données </em> </dd>
-					</tr>
-					<tr>
-						<dt>Carré des Officiers</dt>
-						<dd>C'est ici que vous pourrez discuter de vos week-end</dd>
-					</tr>
-					<tr>
-						<dt>Commandement</dt>
-						<dd>C'est ici que le commandement siège</dd>
-					</tr>
-					<tr>
-						<dt>Académie</dt>
-						<dd>C'est ici que vous passerez vos cours d'appréciations</dd>
-					</tr>
-					<tr>
-						<dt>Prisons</dt>
-						<dd>C'est ici que les membres sous le joug d'une sanction peuvent participer à la vie de la Team est ici que les membres sous le joug d'une sanction peuvent participer à la vie de la Team est ici que les membres sous le joug d'une sanction peuvent participer à la vie de la Team.</em></dd>
-					</tr>
-					</table>
+                      <table>
+
+
+                          <?php
+
+
+
+                            //print_r($nbrSubjectsInTheForum);
+
+                            // Print All the forum of the selected level
+                            foreach($forums as $forum){
+
+                                //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
+                                //print_r($nbrSubjectsInTheForum);
+                                //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
+                                $nbrSub = 1;
+
+                                if(ctype_digit($forum['forAddiction']) == 1){
+                                    echo("<tr>
+                                        <dt>$forum[forName]</dt>
+                                        <dd>
+                                            <table>
+                                                <tr>
+                                                    <td class=\"forDescription\"><em>$forum[forDescription]</em></td>
+                                                    <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
+                                                    <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
+                                                </tr>
+                                            </table>
+                                        </dd>");
+                                }elseif(preg_match("/^[0-9][.][0-9]$/",$forum['forAddiction'])){
+                                    echo("<tr>
+                                        <dt class=\"forNamel2\">$forum[forName]</dt>
+                                        <dd>
+                                            <table>
+                                                <tr>
+                                                    <td class=\"forDescriptionl2\"><em>$forum[forDescription]</em></td>
+                                                    <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
+                                                    <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
+                                                </tr>
+                                            </table>
+                                        </dd>");
+                                }
+
+
+                            }
+                          ?>
+
+
+                        </table>
 				  </dl>
 
-			  
 			  <!-- End First List -->
-			  
-			  <h6>Other Stuff</h6>
-			  <blockquote>
-				<p>I can't help it if people want to go to hell. <cite>&mdash; <abbr title="Invisible Pink Unicorn">IPU</abbr></cite></p>
-			  </blockquote>
-			  <pre><code>This is unlike any code I've ever seen in my entire life. Well, minus my dreams, maybe.</code></pre>
 			</div>
 		  </div>
 		  
 		</div>
-		<div id="footer">
-		  <p>Copyright &copy; 2015-2016 Team d'Ares. All rights reserved. </p>
-		  <p> Initial Design by <a href="http://www.nikhedonia.com/" title="SimplyGold">Sadhana Ganapathiraju</a>, Editing Design by <a href="">Daniel Baltensperger</a>. </p>
-		  <p> <a href="#">Terms of Service</a> | <a href="#">Privacy</a> | <a href="#">Contact</a> | <a href="#">About</a> | <a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0 Strict">Xhtml</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css2" title="Valid CSS 2.0 Strict">Css</a> </p>
-		</div>
+        <!-- End printed the forums -->
+
+        <!-- Footer -->
+        <?php include("_Layout/layout_footer.php") ?>
 	</body>
 </html>
