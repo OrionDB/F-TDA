@@ -106,9 +106,21 @@ class DbAccess {
                     // We start the Session
                     session_start ();
 
+                    // We store his function accreditation in an array
+                    $funAcc = $this->getFunctionAccreditationByUserName($member['memPseudo']);
+
                     // Save the information of our member like session variable
                     $_SESSION['namPseudo'] = $member['memPseudo'];
-                    $_SESSION['rankAccreditation'] = $member['graAccreditation'];
+
+                    $rankAcc = array();
+
+                    for($u = $member['graAccreditation'];$u >=0;$u--){
+                        $rankAcc[] = $u;
+                    }
+
+                    $_SESSION['Accreditation'] = $funAcc;
+                    $_SESSION['rankAccreditation'] = $rankAcc;
+                    //$_SESSION['rankAccreditation'] = $member['graAccreditation'];
 
                     // disengage the error message
                     $Error = false;
@@ -200,7 +212,7 @@ class DbAccess {
     public function getFunctionAccreditationByUserName($userName){
 
         // Define the sql request
-        $req = 'SELECT funAccreditation from t_member natural join have natural join t_function where memPseudo = "Vari"';
+        $req = "SELECT funAccreditation from t_member natural join have natural join t_function where memPseudo = '$userName'";
 
         // Execute sql Request
         $result = $this->executeSqlRequest($req);

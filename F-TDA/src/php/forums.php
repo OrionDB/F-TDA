@@ -8,6 +8,12 @@
 
     <?php
     session_start();
+
+    if(!isset($_session['Accreditation'])){
+        $_SESSION['Accreditation'] = array(0);
+    }
+
+    error_reporting(E_ERROR | E_WARNING | E_PARSE);
     ?>
 
 	<!-- Start Header -->
@@ -42,6 +48,8 @@
         //print_r($forums);
         //echo count($forums);
 
+        //print_r($_GET);
+
         ?>
 
 
@@ -59,46 +67,44 @@
 
                           <?php
 
-
-
-                            //print_r($nbrSubjectsInTheForum);
-
                             // Print All the forum of the selected level
                             foreach($forums as $forum){
 
-                                if($forum['forAccreditation'] <= 9){
-                                    //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
-                                    //print_r($nbrSubjectsInTheForum);
-                                    //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
-                                    $nbrSub = 1;
+                                for($i = 0;$i<count($_SESSION['Accreditation']) + count($_SESSION['rankAccreditation']);$i++){
 
-                                    if(ctype_digit($forum['forAddiction']) == 1){
-                                        echo("<tr>
-                                        <dt>$forum[forName]</dt>
-                                        <dd>
-                                            <table>
-                                                <tr>
-                                                    <td class=\"forDescription\"><em>$forum[forDescription]</em></td>
-                                                    <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
-                                                    <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
-                                                </tr>
-                                            </table>
-                                        </dd>");
-                                    }elseif(preg_match("/^[0-9][.][0-9]$/",$forum['forAddiction'])){
-                                        echo("<tr>
-                                        <dt class=\"forNamel2\">$forum[forName]</dt>
-                                        <dd>
-                                            <table>
-                                                <tr>
-                                                    <td class=\"forDescriptionl2\"><em>$forum[forDescription]</em></td>
-                                                    <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
-                                                    <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
-                                                </tr>
-                                            </table>
-                                        </dd>");
-                                    }
+                                        if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
+                                            //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
+                                            //print_r($nbrSubjectsInTheForum);
+                                            //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
+                                            $nbrSub = 1;
+
+                                            if(ctype_digit($forum['forAddiction']) == 1){
+                                                echo("<tr>
+                                                <dt><a href=\"forums.php?id=$forum[forName]\">$forum[forName]</a></dt>
+                                                <dd>
+                                                    <table>
+                                                        <tr>
+                                                            <td class=\"forDescription\"><em>$forum[forDescription]</em></td>
+                                                            <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
+                                                            <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
+                                                        </tr>
+                                                    </table>
+                                                </dd>");
+                                            }elseif(preg_match("/^[0-9][.][0-9]$/",$forum['forAddiction'])){
+                                                echo("<tr>
+                                                <dt class=\"forNamel2\"><a href=\"forums.php?id=$forum[forName]\">$forum[forName]</a></dt>
+                                                <dd>
+                                                    <table>
+                                                        <tr>
+                                                            <td class=\"forDescriptionl2\"><em>$forum[forDescription]</em></td>
+                                                            <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
+                                                            <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
+                                                        </tr>
+                                                    </table>
+                                                </dd>");
+                                            }
+                                        }
                                 }
-
 
 
 
