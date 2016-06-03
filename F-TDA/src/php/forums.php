@@ -6,6 +6,10 @@
     Description :   Home page for the Ares Team Forum
     -->
 
+    <?php
+    session_start();
+    ?>
+
 	<!-- Start Header -->
 	<head>
 		<title>Forum Officiel team d'Ares</title>
@@ -62,13 +66,14 @@
                             // Print All the forum of the selected level
                             foreach($forums as $forum){
 
-                                //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
-                                //print_r($nbrSubjectsInTheForum);
-                                //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
-                                $nbrSub = 1;
+                                if($forum['forAccreditation'] <= 9){
+                                    //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
+                                    //print_r($nbrSubjectsInTheForum);
+                                    //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
+                                    $nbrSub = 1;
 
-                                if(ctype_digit($forum['forAddiction']) == 1){
-                                    echo("<tr>
+                                    if(ctype_digit($forum['forAddiction']) == 1){
+                                        echo("<tr>
                                         <dt>$forum[forName]</dt>
                                         <dd>
                                             <table>
@@ -79,8 +84,8 @@
                                                 </tr>
                                             </table>
                                         </dd>");
-                                }elseif(preg_match("/^[0-9][.][0-9]$/",$forum['forAddiction'])){
-                                    echo("<tr>
+                                    }elseif(preg_match("/^[0-9][.][0-9]$/",$forum['forAddiction'])){
+                                        echo("<tr>
                                         <dt class=\"forNamel2\">$forum[forName]</dt>
                                         <dd>
                                             <table>
@@ -91,7 +96,10 @@
                                                 </tr>
                                             </table>
                                         </dd>");
+                                    }
                                 }
+
+
 
 
                             }

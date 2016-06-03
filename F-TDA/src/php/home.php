@@ -6,6 +6,10 @@
     Description :   Home page for the Ares Team Forum
     -->
 
+    <?php
+        session_start();
+    ?>
+
 	<!-- Start Header -->
 	<head>
 		<title>Forum Officiel team d'Ares</title>
@@ -22,23 +26,11 @@
 	
 	<!-- Start Body -->
 	<body class="bhome">
-		<div id="header">
-		  <h1>Team d'Ares - Forum Officiel</h1>
-		</div>
-		
-		<!-- Start Navigation bar -->
-		<div id="navigation">
-		  <ul>
-			<li class="lhome"><a href="#00">Home</a></li>
-			<li class="lproducts"><a href="#01">Forum</a></li>
-			<li class="lsolutions"><a href="#02">Membre</a></li>
-			<li class="lmysterious"><a href="#03">Profil</a></li>
-			<li class="labout"><a href="#04">Messagerie</a></li>
-			<li class="lcontact"><a href="#05">Connexion</a></li>
-		  </ul>
-		</div>
-		
-		<!-- End Navigation bar -->
+    <?php include("_Layout/layout_header.php") ?>
+
+    <!-- Start Navigation bar -->
+    <?php include("_Layout/layout_menu.php") ?>
+    <!-- End Navigation bar -->
 		
 		
 		<div class="wrapper">
@@ -50,12 +42,12 @@
 			  
 				  <dl>
 					<dt>Bienvenue sur le Forum de la Team d'Ares</dt>
-					<dd>Je suis Orion, chef et fondateur de la team, je suis également officier supérieur à la CDF.<br><br>
+					<dd class="newsHome">Je suis Orion, chef et fondateur de la team, je suis également officier supérieur à la CDF.<br><br>
 						Cette team est ouverte à tous joueur désirant partager sa passion des jeux vidéo, quelqu'il soit.<br>
 						Votre jeux n'est pas encore représenté, dans ce cas, contacter moi, je me ferais un plaisir de discuter avec vous des modalité d'ajout d'un jeux 
 						dans notre base de données.</dd>
 					<dt>Avis de Recrutement</dt>
-					<dd>Bonjours, suite à la sortie de notre nouveau forum, nous relançons les campagnes de recrutement, par conséquent, si vous vous sentez l'âme de contribuer activement à la vie de la team, n'hésiter pas à passer faire un tour dans la section "Recrutement" du forum "Candidature" pour
+					<dd class="newsHome">Bonjours, suite à la sortie de notre nouveau forum, nous relançons les campagnes de recrutement, par conséquent, si vous vous sentez l'âme de contribuer activement à la vie de la team, n'hésiter pas à passer faire un tour dans la section "Recrutement" du forum "Candidature" pour
 						 voir les différents poste à pourvoir.<br><br>
 						 Cordialement le Commandement
 						

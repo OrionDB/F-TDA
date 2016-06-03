@@ -8,6 +8,11 @@
 ?>
 <!DOCTYPE html>
 <html>
+
+<?php
+session_start();
+?>
+
 	<!-- Start Header -->
 	<head>
 		<title>Forum Officiel team d'Ares</title>
@@ -43,7 +48,7 @@
 
 			  <!-- Start First List 1 columns -->
 
-                <form class="registerForm" method="post" action="#">
+                <form class="registerForm" method="post" action="processRegister.php">
                     <table>
                         <tr>
                             <th>Pseudo</th>
@@ -54,8 +59,16 @@
                             <td><input name="iPassword" type="password"></td>
                         </tr>
                         <tr>
+                            <th>Répéter le Mot de passe</th>
+                            <td><input name="iPassword2" type="password"></td>
+                        </tr>
+                        <tr>
+                            <th>Adresse Mail</th>
+                            <td><input type="email" name="iMail"></td>
+                        </tr>
+                        <tr>
                             <th></th>
-                            <td><input type="submit"></td>
+                            <td><input type="submit" value="S'enregistrer"></td>
                         </tr>
                     </table>
                     <br>
