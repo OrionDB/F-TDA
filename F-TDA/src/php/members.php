@@ -3,11 +3,14 @@
 	<!--
     Author      :   Daniel Baltensperger
     Date        :   31.05.2016
-    Description :   Home page for the Ares Team Forum
+    Description :   Members List for the Ares Team Forum
     -->
 
     <?php
         session_start();
+
+        include("Class/DbAccess.php");
+        $work = new DbAccess();
     ?>
 
 	<!-- Start Header -->
@@ -25,7 +28,7 @@
 	<!-- End Header -->
 	
 	<!-- Start Body -->
-	<body class="bhome">
+	<body class="bmembers">
     <?php include("_Layout/layout_header.php") ?>
 
     <!-- Start Navigation bar -->
@@ -36,29 +39,53 @@
 		<div class="wrapper">
 		  <div class="content-wrapper">
 			<div class="content">
-			  <h4>Forums</h4>
-			  
+			  <h4>Membres</h4>
+
+                <?php
+                if(isset($_SESSION['namPseudo'])){
+
+
+                ?>
 			  <!-- Start First List 1 columns -->
 			  
 				  <dl>
-					<dt>Bienvenue sur le Forum de la Team d'Ares</dt>
-					<dd class="newsHome">Je suis Orion, chef et fondateur de la team, je suis également officier supérieur à la CDF.<br><br>
-						Cette team est ouverte à tous joueur désirant partager sa passion des jeux vidéo, quelqu'il soit.<br>
-						Votre jeux n'est pas encore représenté, dans ce cas, contacter moi, je me ferais un plaisir de discuter avec vous des modalité d'ajout d'un jeux 
-						dans notre base de données.</dd>
-					<dt>Avis de Recrutement</dt>
-					<dd class="newsHome">Bonjours, suite à la sortie de notre nouveau forum, nous relançons les campagnes de recrutement, par conséquent, si vous vous sentez l'âme de contribuer activement à la vie de la team, n'hésiter pas à passer faire un tour dans la section "Recrutement" du forum "Candidature" pour
-						 voir les différents poste à pourvoir.<br><br>
-						 Cordialement le Commandement
-						
+					<table>
+                        <tr>
+                            <th>Pseudo</th>
+                            <th>Membre depuis</th>
+                            <th>Grade</th>
+                            <th>Fonction</th>
+                            <th>Action</th>
+                        </tr>
+                        <?php
+
+                            // Find all members
+                            $members = $work->getMemberslist();
+
+                            foreach($members as $member){
+                                $color = $member['graColor'];
+
+                                echo("
+                                    <tr>
+                                        <td class=\"mPseudo\" ><a href=\"#profil.php?id=$member[memPseudo]\" style=\"color: $color;\">$member[memPseudo]</a></td>
+
+                                        <td class=\"mDate\">$member[memEnterDate]</td>
+                                        <td class=\"mRank\">$member[graName]</td>
+                                        <td class=\"mFunction\">$member[funName]</td>
+                                        <td class=\"MAction\">P - D - E - F</td>
+                                    </tr>
+                                ");
+                            }
+
+                        ?>
+					</table>
 				  </dl>
 
                 <?php
-                    $stringOrig = "ceci est un texte [i]italique[/i]";
-                    echo $stringOrig;
-                    $stringEdit = str_replace("[i]","<i>", $stringOrig);
-                    $stringEdit = str_replace("[/i]","</i>",$stringEdit);
-                    echo "<br><br>$stringEdit";
+
+                }else{
+                    echo "<blockquote><p>Vous n'avez pas le droit d'afficher cette page, veuillez vous connecter</p></blockquote>";
+                }
                 ?>
 
 

@@ -217,6 +217,34 @@ class DbAccess {
         // Execute sql Request
         $result = $this->executeSqlRequest($req);
 
+        // return the answer
         return $result;
-    }
+    }// End getFunctionAccreditationByUserName
+
+    /**
+     * This function will get all the subject contains in a forum
+     * @param $forName = this is the name of the forum
+     * @return array = this is an array with the result of the function
+     */
+    public function getSubjectsByForumName($forName){
+
+        // Define the Sql Request
+        $req = "Select idSubject, subTitle, idMember, memPseudo from t_subject natural join t_forum natural join t_member where forName = '$forName'";
+
+        // Execute the sql request
+        $result = $this->executeSqlRequest($req);
+
+        // return the answer
+        return $result;
+    }// End getSubjectsByForumName
+
+    public function getMemberslist(){
+        // Define the sql request
+        $req = "Select memPseudo, memEnterDate, graName, funName, graColor from t_member natural join t_grade inner join t_function on idFunction = mempFunction order by graAccreditation desc";
+
+        // Execute the request
+        $result = $this->executeSqlRequest($req);
+
+        return $result;
+    }// End getMembersList
 } 

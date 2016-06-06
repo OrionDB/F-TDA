@@ -3,15 +3,15 @@
 	<!--
     Author      :   Daniel Baltensperger
     Date        :   31.05.2016
-    Description :   Home page for the Ares Team Forum
+    Description :   forum page for the Ares Team Forum
     -->
 
     <?php
     session_start();
 
-    // Set the $_session['rankAccreditation'] variable to 0 if the user is a visitor
-    if(!isset($_SESSION['rankAccreditation'][0])){
-        $_SESSION['rankAccreditation'][0] = 0;
+    // Set the $_session['Accreditation'] variable to 0 if the variable is not set
+    if(!isset($_SESSION['Accreditation'][0]['funAccreditation'])){
+        $_SESSION['Accreditation'][0]['funAccreditation'] = 0;
     }
 
     // Ignore error by non-indexing array
@@ -66,18 +66,32 @@
 
                           <?php
 
+                            // Search the Root addiction of the actual forum
+                            foreach($forums as $sad){
+
+                                if($sad['forName'] == $_GET['id']){
+                                    $alpha = $sad['forAddiction'];
+                                }
+                            }
+
                             // Print All the forum of the selected level
                             foreach($forums as $forum){
 
+                                // Check the number of forums we must print
                                 for($i = 0;$i<count($_SESSION['Accreditation']) + count($_SESSION['rankAccreditation']);$i++){
 
+                                    // Around by the floor the Addiction of the current forum
+                                    if(floor($forum['forAddiction']) == $alpha){
+
+                                        // Check if we have the accreditation for print this forum
                                         if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
                                             //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
                                             //print_r($nbrSubjectsInTheForum);
                                             //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
                                             $nbrSub = 1;
 
-                                            if(ctype_digit($forum['forAddiction']) == 1){
+                                            // Check if the forum is in the first level or the second one
+                                            if(preg_match("/^[0-9][.][0-9]$/",$forum['forAddiction'])){
                                                 echo("<tr>
                                                 <dt><a href=\"forum.php?id=$forum[forName]\">$forum[forName]</a></dt>
                                                 <dd>
@@ -89,7 +103,7 @@
                                                         </tr>
                                                     </table>
                                                 </dd>");
-                                            }elseif(preg_match("/^[0-9][.][0-9]$/",$forum['forAddiction'])){
+                                            }elseif(preg_match("/^[0-9][.][0-9]{2}$/",$forum['forAddiction'])){
                                                 echo("<tr>
                                                 <dt class=\"forNamel2\"><a href=\"forum.php?id=$forum[forName]\">$forum[forName]</a></dt>
                                                 <dd>
@@ -103,6 +117,26 @@
                                                 </dd>");
                                             }
                                         }
+                                    }elseif(strncmp($forum['forAddiction'],$alpha,3) == 0 && preg_match("/^[0-9][.][0-9]{2}$/",$forum['forAddiction']) && $_GET['id'] != $forum['forName']){
+                                        if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
+                                            //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
+                                            //print_r($nbrSubjectsInTheForum);
+                                            //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
+                                            $nbrSub = 1;
+
+                                            echo("<tr>
+                                                    <dt class=\"forName\"><a href=\"forum.php?id=$forum[forName]\">$forum[forName]</a></dt>
+                                                    <dd>
+                                                        <table>
+                                                            <tr>
+                                                                <td class=\"forDescription\"><em>$forum[forDescription]</em></td>
+                                                                <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
+                                                                <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
+                                                            </tr>
+                                                        </table>
+                                                    </dd>");
+                                        }
+                                    }
                                 }
 
 
@@ -110,10 +144,35 @@
                             }
                           ?>
 
-
                         </table>
 				  </dl>
 
+                <h4>Sujets</h4>
+
+                <blockquote>
+                    <table>
+                        <?php
+                        ///if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
+                            $subjects = $work->getSubjectsByForumName($_GET['id']);
+                            //print_r($subjects[0]);
+                            //echo $subjects[0]['subTitle'];
+
+                            foreach($subjects as $subject){
+                                echo("
+                                <tr>
+                                    <th class=\"subTitle\">$subject[subTitle]</th>
+                                    <td class=\"subAuthor\">$subject[memPseudo]</td>
+                                    <td class=\"subAnswer\">6</td>
+                                    <td class=\"subLast\">Iota</td>
+                                </tr>
+                                ");
+                            }
+
+
+                        //}
+                        ?>
+                    </table>
+                </blockquote>
 			  <!-- End First List -->
 			</div>
 		  </div>

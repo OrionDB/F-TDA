@@ -77,6 +77,10 @@ blockquote p { text-align: left; }
 
 blockquote cite { font-style: normal; padding-right: 10px; }
 
+table{
+    border-collapse: collapse;
+}
+
 /* Structure */
 
 body
@@ -241,6 +245,12 @@ body.bRegister li.lregister a
     background: #333333 url(../images/navigation_hover.gif) 0 -2px repeat;
 }
 
+body.bmembers li.lMember a
+{
+    color: #99bbdd;
+    background: #333333 url(../images/navigation_hover.gif) 0 -2px repeat;
+}
+
 /* Navigation Class Home*/
 .formConnection{
     display: flex;
@@ -307,7 +317,55 @@ body.bRegister li.lregister a
     border-bottom: 1px dotted #555555;
 }
 
+.subTitle{
+    color: #7799bb;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 0;
+    text-align: left;
+    width: 640px;
+    border-right: 1px dotted red;
+    border-bottom: 1px dotted red;
+}
 
+.subAnswer{
+    width: 30px;
+    text-align: center;
+    border-bottom: 1px dotted brown;
+}
 
+.subAuthor{
+    width: 100px;
+    text-align: center;
+    border-right: 1px dotted green;
+    border-bottom: 1px dotted green;
+}
 
+.subLast{
+    text-align: right;
+    width: 100px;
+    border-right: 1px dotted yellow;
+    border-bottom: 1px dotted yellow;
+}
 
+.mPseudo{
+    border: 1px dotted red;
+    width: 100px;
+}
+
+.mDate{
+    border: 1px dotted red;
+}
+
+.mRank{
+    border: 1px dotted red;
+}
+
+.mFunction{
+    border: 1px dotted red;
+}
+
+.MAction{
+    border: 1px dotted red;
+    color: lightgreen;
+}

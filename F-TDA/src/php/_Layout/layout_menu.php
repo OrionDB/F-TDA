@@ -2,10 +2,11 @@
     <ul>
         <li class="lhome"><a href="home.php">Home</a></li>
         <li class="lForum"><a href="forums.php">Forum</a></li>
-        <li class="lMember"><a href="#02">Membre</a></li>
+
         <?php
             if(isset($_SESSION['namPseudo'])){
                 ?>
+                <li class="lMember"><a href="members.php">Membres</a></li>
                 <li class="lmysterious"><a href="#03">Profil</a></li>
                 <li class="labout"><a href="#04">Messagerie</a></li>
                 <li class="lpseudo"><a href="#06"><?php echo $_SESSION['namPseudo'] ?></a></li>
