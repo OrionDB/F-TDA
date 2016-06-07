@@ -93,8 +93,6 @@ class DbAccess {
         $reqMember = 'SELECT memPseudo,memPassword,graAccreditation FROM t_member NATURAL JOIN t_grade';
         $members = $this->executeSqlRequest($reqMember);
 
-        //print_r($members);
-
         // testing if the variable is set
         if ($_POST['userName'] != null && $_POST['userPassword'] != null) {
 
@@ -125,7 +123,7 @@ class DbAccess {
                     // disengage the error message
                     $Error = false;
 
-                    print $_SESSION['namPseudo'];
+                    //print $_SESSION['namPseudo'];
 
 
                     //Find the original URL
@@ -238,6 +236,10 @@ class DbAccess {
         return $result;
     }// End getSubjectsByForumName
 
+    /**
+     * This function will return an array with all the member ordered by the grade
+     * @return array
+     */
     public function getMemberslist(){
         // Define the sql request
         $req = "Select memPseudo, memEnterDate, graName, funName, graColor from t_member natural join t_grade inner join t_function on idFunction = mempFunction order by graAccreditation desc";
@@ -247,4 +249,55 @@ class DbAccess {
 
         return $result;
     }// End getMembersList
+
+    /**
+     * This function will return all the information about a member
+     * @param $memberName
+     * @return array
+     */
+    public function getMemberByName($memberName){
+
+        // Define the Sql Request
+        $req = "SELECT memPseudo, memEnterDate, memVarious, graName, funName, graColor, memMail from t_member natural join t_grade inner join t_function on idFunction = memPFunction  where memPseudo = '$memberName'";
+        $req2 = "SELECT count(idPost) as nbrPost from t_post natural join t_member where memPseudo = '$memberName'";
+
+        // Execute the sql request
+        $result = $this->executeSqlRequest($req);
+        $result2 = $this->executeSqlRequest($req2);
+
+        // Fusion between the two result
+        $result[1] = $result2;
+
+        return $result;
+    }// End getMemberByName
+
+    /**
+     * This function will update the user
+     * @param $pseudo
+     * @param $mail
+     * @param $various
+     * @param $id
+     * @return array
+     */
+    public function updateMember($pseudo, $mail, $various, $id){
+
+        // Define the sql Request
+        $req = "UPDATE t_member SET memPseudo = '$pseudo', memMail = '$mail', memVarious = '$various' WHERE t_member.idMember = '$id';";
+
+        // Execute sql request
+        $result = $this->executeSqlRequest($req);
+
+        return $result;
+
+    }// End updateMember
+
+    public function getIdMember($name){
+        // Define the sql Request
+        $req = "SELECT idMember from t_member where memPseudo = '$name'";
+
+        // Execute sql request
+        $result = $this->executeSqlRequest($req);
+
+        return $result;
+    }
 } 

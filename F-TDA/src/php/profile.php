@@ -39,45 +39,57 @@
 		<div class="wrapper">
 		  <div class="content-wrapper">
 			<div class="content">
-			  <h4>Membres</h4>
+
 
                 <?php
                 if(isset($_SESSION['namPseudo'])){
 
+                    // Find the information about the member
+                    $member = $work->getMemberByName($_GET['id']);
+
+                    print_r($member);
+
+                    $color = $member[0]['graColor'];
+                    $pseudo = $member[0]['memPseudo'];
 
                 ?>
 			  <!-- Start First List 1 columns -->
-			  
+                    <h4><?php echo $_GET['id']?></h4>
+
 				  <dl>
-					<table>
+					<table class="pTable">
                         <tr>
-                            <th>Pseudo</th>
-                            <th>Membre depuis</th>
-                            <th>Grade</th>
-                            <th>Fonction</th>
-                            <th>Action</th>
+                            <td rowspan="5" class="pPicture"><img src='../../userContent/profilePicture/<?php echo $pseudo ?>.jpg' alt="Image non définie" width="150px"></td>
+                            <th class="pOther">Pseudo</th>
+                            <td class="pOther" ><?php echo ("<span style=\"color: $color;\">".$member[0]["memPseudo"]."</span>") ?></td>
                         </tr>
-                        <?php
+                        <tr>
 
-                            // Find all members
-                            $members = $work->getMemberslist();
+                            <th class="pOther">Grade</th>
+                            <td class="pOther"><?php echo $member[0]['graName'] ?></td>
+                        </tr>
+                        <tr>
 
-                            foreach($members as $member){
-                                $color = $member['graColor'];
+                            <th class="pOther">Fonction</th>
+                            <td class="pOther"><?php echo $member[0]['funName'] ?></td>
+                        </tr>
+                        <tr>
 
-                                echo("
-                                    <tr>
-                                        <td class=\"mPseudo\" ><a href=\"profile.php?id=$member[memPseudo]\" style=\"color: $color;\">$member[memPseudo]</a></td>
+                            <th class="pOther">Date d'inscription</th>
+                            <td class="pOther"><?php echo $member[0]['memEnterDate'] ?></td>
+                        </tr>
+                        <tr>
 
-                                        <td class=\"mDate\">$member[memEnterDate]</td>
-                                        <td class=\"mRank\">$member[graName]</td>
-                                        <td class=\"mFunction\">$member[funName]</td>
-                                        <td class=\"MAction\">P - D - E - F</td>
-                                    </tr>
-                                ");
-                            }
+                            <th class="pOther">Nbr de message</th>
+                            <td class="pOther"><?php echo $member[1][0]['nbrPost'] ?></td>
+                        </tr>
+                        <tr>
+                            <td><h5>Divers</h5></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><?php echo $member[0]['memVarious']?></td>
+                        </tr>
 
-                        ?>
 					</table>
 				  </dl>
 

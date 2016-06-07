@@ -203,8 +203,8 @@ li.lMember a:active
 	background-position: 0 2px; 
 }
 
-li.lmysterious a:hover,
-li.lmysterious a:active
+li.lProfile a:hover,
+li.lProfile a:active
 {
 	background-position: 0 -1px; 
 }
@@ -246,6 +246,12 @@ body.bRegister li.lregister a
 }
 
 body.bmembers li.lMember a
+{
+    color: #99bbdd;
+    background: #333333 url(../images/navigation_hover.gif) 0 -2px repeat;
+}
+
+body.bProfile li.lProfile a
 {
     color: #99bbdd;
     background: #333333 url(../images/navigation_hover.gif) 0 -2px repeat;
@@ -368,4 +374,18 @@ body.bmembers li.lMember a
 .MAction{
     border: 1px dotted red;
     color: lightgreen;
+}
+
+.pPicture{
+    border: 1px dotted red;
+    width: 152px;
+    text-align: center;
+}
+
+.pOther{
+    border: 1px dotted red;
+}
+
+.pTable{
+    width: 500px;
 }

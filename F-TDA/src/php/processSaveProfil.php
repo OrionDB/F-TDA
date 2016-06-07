@@ -13,14 +13,28 @@ include("Class/DbAccess.php");
 $dba = new DbAccess();
 
 // Check if information are entered
-if(isset($_POST['iPseudo']) AND isset($_POST['iPassword']) AND isset($_POST['iPassword2']) AND isset($_POST['iMail'])){
+if(isset($_POST['iPseudo']) AND isset($_POST['iMail'])){
+
+    if($_POST['iPseudo'] == ""){
+        $_POST['iPseudo'] == $_POST['iPseudoh'];
+    }
+
+    if($_POST['iMail'] == ""){
+        $_POST['iMail'] == $_POST['iMailh'];
+    }
+
+    if($_POST['iVarious'] == ""){
+        $_POST['iVarious'] == $_POST['iVarioush'];
+    }
 
     // Call the function for adding a member
-    $dba->addMember();
+    $id = $dba->getIdMember($_POST['iPseudoh']);
 
-    echo '<body onLoad="alert(\'Bienvenue sur le forum\')"> ';
+    $dba->updateMember($_POST['iPseudo'],$_POST['iMail'],$_POST['iVarious'],$id[0]['idMember']);
+
+    echo '<body onLoad="alert(\'Information sauvée\')"> ';
     // Return to main page
-    echo '<meta http-equiv="refresh" content="0;URL=forums.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=myProfile.php">';
 }else{
 
     // Error message
