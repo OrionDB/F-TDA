@@ -370,4 +370,14 @@ class DbAccess {
         return $result;
     }// End getAllPostsBySubjectId
 
+    public function addPost($name, $post, $topic){
+        // define the sql request
+        $req = "INSERT INTO db_alpha.t_post (idPost, posText, idMember, idSubject) VALUES (NULL, '$post', (SELECT idMember from t_member where memPseudo = '$name'), '$topic')";
+
+        // Execute Request
+        $this->executeSqlRequest($req);
+
+        return ;
+    }
+
 }

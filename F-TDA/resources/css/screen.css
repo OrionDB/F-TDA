@@ -402,6 +402,13 @@ body.bProfile li.lProfile a
     width: 150px;
 }
 
+.tMeta2{
+    border: 1px dotted green;
+    padding: 5px;
+    width: 150px;
+    background-color: #333333;
+}
+
 .tPImg{
     text-align: center;
     border: 2px ridge red;
@@ -422,9 +429,23 @@ body.bProfile li.lProfile a
     width: 900px;
     height: 250px;
     resize: none;
+    padding:5px;
+
 }
 
 .tNtd{
     text-align: center;
-    border: 2px ridge yellow;
+}
+
+.tNtd2{
+    text-align: center;
+    height:20px;
+}
+
+.tNPostT{
+    margin: auto;
+}
+
+.tNPostTxt{
+    padding:10px;
 }

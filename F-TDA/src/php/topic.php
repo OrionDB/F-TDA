@@ -77,13 +77,15 @@
                             foreach($posts as $post){
                                 $color = $post['graColor'];
 
+                                $posText = str_replace("\n","<br/>",$post['posText']);
+
                                 echo "
                                     <tr>
                                         <td colspan=\"2\" class=\"tStartPost\"></td>
                                     </tr>
                                     <tr>
                                         <td class=\"tMeta\"><img class=\"tPImg\" src=\"../../userContent/profilePicture/$post[memPseudo].jpg\" width=\"150\" alt=\"Test\"></td>
-                                        <td class=\"tPost\" rowspan=\"4\">$post[posText]</td>
+                                        <td class=\"tPost\" rowspan=\"4\">$posText</td>
                                     </tr>
                                     <tr>
                                         <td class=\"tMeta\" style=\"color: $color;\">$post[memPseudo]</td>
@@ -101,31 +103,50 @@
                             }
 
                           ?>
+                      </table>
 
+                      <table class="tNPostT">
                           <tr>
-                              <th colspan=\"2\" class="tNtd">Nouveau Post :</th>
+                              <th colspan="2" class="tNtd2"></th>
                           </tr>
-                          <form name="fNewPost" method="post" action="#">
-                              <tr>
+                          <form name="fNewPost" method="post" action="processNewPost.php">
 
-                                <th>Balise Formatage</th>
-                                <td rowspan="4"><textarea class="tNPost" name="Post"></textarea></td>
-                              </tr>
-                              <tr>
-                                  <td><i>Italique : [i][/i]</i></td>
-                              </tr>
-                              <tr>
-                                  <td><b>Gras : [b][/b]</b></td>
-                              </tr>
-                              <tr>
-                                  <td><u>Souligné : [u][/u]</u></td>
-                              </tr>
-                              <tr>
-                                  <td colspan="2" class="tNtd"><input type="submit"></td>
-                              </tr>
+                                  <tr>
+                                      <th colspan="2" class="tNtd"><h6>Nouveau Post :</h6></th>
+                                  </tr>
+                                  <tr>
+                                    <th class="tMeta2"><b><u>Balise Formatage</u></b></th>
+                                    <td rowspan="7" class="tNPostTxt"><textarea class="tNPost" name="Post"></textarea></td>
+                                  </tr>
+                                  <tr>
+                                      <td class="tMeta2">Italique : [i][/i]</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="tMeta2">Couleur : [color = ""][/color]</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="tMeta2">Gras : [b][/b]</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="tMeta2">Gras : [b][/b]</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="tMeta2">Gras : [b][/b]</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="tMeta2">Souligné : [u][/u]</td>
+                                  </tr>
+                                  <tr>
+                                      <td colspan="2" class="tNtd"><input type="submit"></td>
+                                  </tr>
+
+                              <?php echo"<input name=\"topicId\" type='hidden' value='$_GET[id]'>"; ?>
+
+
                           </form>
 
-                        </table>
+
+                      </table>
 				  </dl>
 			  <!-- End First List -->
 			</div>
@@ -135,6 +156,11 @@
         <!-- End printed the forums -->
 
         <!-- Footer -->
-        <?php include("_Layout/layout_footer.php") ?>
+        <?php //include("_Layout/layout_footer.php") ?>
+        <div class="footer">
+            <p>Copyright &copy; 2015-2016 Team d'Ares. All rights reserved. </p>
+            <p> Initial Design by <a href="http://www.nikhedonia.com/" title="SimplyGold">Sadhana Ganapathiraju</a>, Editing Design by <a href="">Daniel Baltensperger</a>. </p>
+            <p> <a href="#">Terms of Service</a> | <a href="#">Privacy</a> | <a href="#">Contact</a> | <a href="#">About</a> | <a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0 Strict">Xhtml</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css2" title="Valid CSS 2.0 Strict">Css</a> </p>
+        </div>
 	</body>
 </html>

@@ -1,0 +1,3 @@
+# List of error and define wich page will page will the user redirected
+
+ErrorDocument 404 /projects/P_Web2-PHP-sprint2/page/404.php

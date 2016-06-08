@@ -32,9 +32,8 @@ if(isset($_POST['iPseudo']) AND isset($_POST['iMail'])){
 
     $dba->updateMember($_POST['iPseudo'],$_POST['iMail'],$_POST['iVarious'],$id[0]['idMember']);
 
-    echo '<body onLoad="alert(\'Information sauvée\')"> ';
     // Return to main page
-    echo '<meta http-equiv="refresh" content="0;URL=myProfile.php">';
+    header("location: myProfile.php");
 }else{
 
     // Error message

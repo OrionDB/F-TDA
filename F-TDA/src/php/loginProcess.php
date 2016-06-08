@@ -19,7 +19,7 @@ if(isset($_POST['userName']) AND isset($_POST['userPassword'])){
     $dba->Login();
 
     // Return to main page
-    echo '<meta http-equiv="refresh" content="0;URL=forums.php">';
+    header("location: forums.php");
 }else{
 
     // Error message

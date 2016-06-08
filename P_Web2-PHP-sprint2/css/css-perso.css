@@ -1,0 +1,320 @@
+/*
+Author : Yvan Cochet
+Summary : CSS-Style for website model
+Date : 26.01.2016
+*/
+
+/*BALISE*/
+html{
+    background-image:url('../pictures/light_gray_windows_8_background_by_gifteddeviant-d4wofjz.png');
+}
+
+body{
+    background-color: transparent;
+    margin:0 auto;
+    width:1080px;
+}
+
+h1{
+    font-weight:bold;
+}
+
+/*CLASS*/
+
+.cif{
+    clear:both;
+    margin-right:28px;
+    margin-left:28px;
+    margin-bottom: 20px;
+    display:inline-block;
+    width:300px;
+    height:300px;
+    border-radius: 20px;
+    padding:5px;
+    text-align:justify;
+    border:5px solid #333333;
+    background-color: #f5f5f5;
+    transition: all 0.8s ease;
+}
+
+.cif:hover{
+    -webkit-box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, .75);
+    box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, .75);
+}
+
+
+.cif-description{
+    height:180px;
+    display:flex;
+}
+
+.cif-detail-link{
+    text-decoration:none;
+    color:#333333;
+}
+
+.cif-detail-link:focus{
+    text-decoration:none;
+    color:#333333;
+}
+
+.cif-detail-link:hover{
+    text-decoration:none;
+    color:#333333;
+}
+
+.cif-category-container{
+    clear:both;
+    text-align:center;
+    border-top:2px solid #333333;
+}
+
+.cif-title{
+    font-size:20px;
+    font-weight: bold;
+    text-align:center;
+    border-bottom:3px solid #333333;
+    cursor:pointer;
+}
+
+.cif-category-title{
+    text-align:left;
+}
+
+.about-container{
+    clear:both;
+    text-align:center;
+}
+
+.cif-bottom{
+    font-size:20px;
+    font-weight: bold;
+    text-align:center;
+    vertical-align:bottom;
+    border-top:3px solid #333333;
+    margin-bottom:0;
+    float:left;
+    width:100%;
+    padding-top:5px;
+    margin-top:10px;
+}
+
+.evaluate-link{
+    text-decoration:none;
+    color: #7d7d7d;
+}
+
+.evaluate-link:hover{
+    text-decoration:none;
+    cursor:pointer;
+    color: #555555;
+}
+
+.info-container{
+    line-height:2.2;
+}
+
+.tri-title{
+    font-size:20px;
+}
+
+.dropdown-menu{
+    padding: 15px;
+    padding-bottom:0px;
+    width:280px;
+}
+
+.dropdown{
+    list-style:none;
+}
+
+.form-control{
+    resize:none;
+}
+
+.panel-default{
+    border:3px solid #333333;
+    border-radius:15px;
+    background-color:#f5f5f5;
+}
+
+.fat{
+    font-weight: bold;
+}
+
+.cif-detail{
+    background-color:#f5f5f5;
+    border:5px solid #333333;
+    border-radius:20px;
+    clear:both;
+    overflow:hidden;
+    padding:5px;
+    margin-bottom:10px;
+}
+
+.cif-detail-bottom{
+    font-weight: bold;
+    text-align:center;
+    vertical-align:bottom;
+    border-top:3px solid #333333;
+    margin-bottom:0;
+    float:left;
+    width:100%;
+    padding-top:5px;
+    margin-top:10px;
+}
+
+.half {
+    position: relative;
+}
+
+.half:before {
+     position: relative;
+     z-index: 9;
+     width: 47%;
+     display: block;
+     overflow: hidden;
+ }
+
+.half:after {
+     content: '\e006';
+     position: absolute;
+     z-index: 8;
+     color: #bdc3c7;
+     top: 0;
+     left: 0;
+ }
+
+.empty{
+    color:#bdc3c7;
+}
+
+.comment{
+    background-color: rgba(245,245,245,0.4);
+}
+
+.comment-name{
+    margin:0;
+    text-align:left;
+    font-weight:bolder;
+}
+
+.comment-text{
+    text-align:left;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    color: #333;
+    font-weight: normal;
+}
+
+.navbar{
+    margin-bottom:5px;
+}
+
+.comment-cif-detail{
+    text-align:left;
+    width:800px;
+    margin:0 auto;
+}
+
+.ul-dropdown{
+    padding:0;
+}
+
+
+/*ID*/
+
+#website-utility-text{
+    margin-left:28px;
+    margin-right:28px;
+    padding:5px;
+    border:3px solid #333333;
+    border-radius:10px;
+    background-color:#f5f5f5;
+    text-align: justify;
+}
+
+#footer{
+    height: 100px;
+    clear:both;
+    background-color: #222222;
+    display: block;
+    padding:20px;
+}
+
+#footer-content{
+    height: 100%;
+    padding:10px;
+}
+
+#footer-text{
+    height: 100%;
+    margin:0;
+    padding:10px;
+    text-align: center;
+    color:white;
+}
+
+#login-dropdown{
+    padding: 15px;
+    padding-bottom:0px;
+    width:250px;
+}
+
+#div-join-us{
+    border-top:1px solid lightgray;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+
+#cat-list{
+    display:inline-block;
+}
+
+#add-cif-button{
+    display:inline-block;
+}
+
+#auto-width{
+    width:auto;
+}
+
+#cat-list{
+    margin-bottom:5px;
+}
+
+#idPseudo{
+    margin-top:10px;
+}
+
+@media all and (max-width: 1100px) {
+
+    body {
+        width: auto;
+
+    }
+    .cif{
+        margin-left:0;
+        margin-right:0;
+    }
+    .comment-cif-detail{
+        width:auto;
+    }
+
+
+}
+
+@media all and (max-width: 767px){
+
+    #login-dropdown{
+        width:auto;
+    }
+    #div-join-us{
+        color:#9D9D9D;
+    }
+    #add-cif-button{
+        display:block;
+    }
+
+}
+
