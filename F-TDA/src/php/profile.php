@@ -47,7 +47,7 @@
                     // Find the information about the member
                     $member = $work->getMemberByName($_GET['id']);
 
-                    print_r($member);
+                    //print_r($member);
 
                     $color = $member[0]['graColor'];
                     $pseudo = $member[0]['memPseudo'];

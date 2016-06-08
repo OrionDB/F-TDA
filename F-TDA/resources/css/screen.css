@@ -389,3 +389,42 @@ body.bProfile li.lProfile a
 .pTable{
     width: 500px;
 }
+
+.tPost{
+    border: 1px dotted red;
+    padding: 5px;
+    background-color: #333333;
+}
+
+.tMeta{
+    border: 1px dotted green;
+    padding: 5px;
+    width: 150px;
+}
+
+.tPImg{
+    text-align: center;
+    border: 2px ridge red;
+    border-radius: 10px;
+}
+
+.tEndPost{
+    border: 2px ridge yellow;
+    height:20px;
+}
+
+.tStartPost{
+    height:7px;
+    background: #404040 url(../images/navigation_hover.gif) top left repeat;
+}
+
+.tNPost{
+    width: 900px;
+    height: 250px;
+    resize: none;
+}
+
+.tNtd{
+    text-align: center;
+    border: 2px ridge yellow;
+}

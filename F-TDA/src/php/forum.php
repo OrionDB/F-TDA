@@ -160,7 +160,7 @@
                             foreach($subjects as $subject){
                                 echo("
                                 <tr>
-                                    <th class=\"subTitle\">$subject[subTitle]</th>
+                                    <th class=\"subTitle\"><a href=\"topic.php?id=$subject[idSubject]&name=$subject[subTitle]\">$subject[subTitle]</a></th>
                                     <td class=\"subAuthor\">$subject[memPseudo]</td>
                                     <td class=\"subAnswer\">6</td>
                                     <td class=\"subLast\">Iota</td>

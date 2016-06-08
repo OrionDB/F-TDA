@@ -89,6 +89,8 @@ class DbAccess {
      */
     public function Login()
     {
+        echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />";
+
         // Store all members in $reqMember
         $reqMember = 'SELECT memPseudo,memPassword,graAccreditation FROM t_member NATURAL JOIN t_grade';
         $members = $this->executeSqlRequest($reqMember);
@@ -291,6 +293,11 @@ class DbAccess {
 
     }// End updateMember
 
+    /**
+     * This function will return the id of a user by this name
+     * @param $name = The name of the user
+     * @return array = Contains the id of the user
+     */
     public function getIdMember($name){
         // Define the sql Request
         $req = "SELECT idMember from t_member where memPseudo = '$name'";
@@ -299,5 +306,68 @@ class DbAccess {
         $result = $this->executeSqlRequest($req);
 
         return $result;
-    }
-} 
+    }// End getIdMember
+
+    /**
+     * This function allow the user to chage his password
+     * @param $name = this is he name of the user
+     */
+    public function setNewPassword($name){
+
+        echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />";
+
+        // Define a first sql request for finding the current password
+        $req = "SELECT memPassword FROM t_member WHERE memPseudo = '$name'";
+
+        // Execute and store the password
+        $password = $this->executeSqlRequest($req);
+
+        // Check if current password is correct
+        if(password_verify($_POST["iPassworda"],$password[0]["memPassword"])){
+
+            // Check if the two new password enter by the user is the same
+            if($_POST['iPassword'] == $_POST['iPassword2']){
+                // Hash new password
+                $newPassHash = $this->hashPassword($_POST['iPassword']);
+
+                // Define the request for update the password
+                $upPass = "UPDATE t_member SET memPassword = '$newPassHash' WHERE memPseudo = '$name'";
+
+                // Execute the request
+                $this->executeSqlRequest($upPass);
+
+                // inform and redirect
+                echo '<body onLoad="alert(\'Mot de passe changé\')"> ';
+                echo '<meta http-equiv="refresh" content="0;URL=myProfile.php">';
+
+            }else{
+                // inform and redirect
+                echo '<body onLoad="alert(\'Les deux mots de passe rentrés ne sont pas identique\')"> ';
+                echo '<meta http-equiv="refresh" content="0;URL=myProfile.php">';
+            }
+
+        // if current password is not correct
+        }else{
+            // inform and redirect
+            echo '<body onLoad="alert(\'Votre mot de passe actuel est erroné\')"> ';
+            echo '<meta http-equiv="refresh" content="0;URL=myProfile.php">';
+        }
+    }// End setNewPassword
+
+    /**
+     * This function will get all the posts contains in a subject
+     * @param $id = This is the id of the subject
+     * @return array
+     */
+    public function getAllPostsBySubjectId($id){
+
+        // Define the Sql Request
+        $req="SELECT posText, memPseudo, memPFunction, graName, funName, idSubject, graColor from t_post natural join t_member natural join t_grade inner join t_function on idFunction = memPFunction Where idSubject = '$id'";
+
+        // Execute the request
+        $result = $this->executeSqlRequest($req);
+
+        return $result;
+    }// End getAllPostsBySubjectId
+
+}

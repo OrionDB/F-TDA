@@ -39,11 +39,11 @@ session_start();
             include("Class/DbAccess.php");
             $work = new DbAccess();
 
-            print_r($_SESSION);
+            //print_r($_SESSION);
 
             $me = $work->getMemberByName($_SESSION['namPseudo']);
-            echo "<br><br>";
-            print_r($me);
+            //echo "<br><br>";
+            //print_r($me);
 
         ?>
 
@@ -83,11 +83,17 @@ session_start();
                     <br>
                     <br>
                 </form>
+
+                <!-- Change Password -->
                 <h4>Changer Mot de Passe</h4>
-                <form class="registerForm" method="post" action="#">
+                <form class="registerForm" method="post" action="processNewPassword.php">
                     <table>
                         <tr>
-                            <th>Mot de passe</th>
+                            <th>Ancien mot de passe</th>
+                            <td><input name="iPassworda" type="password"></td>
+                        </tr>
+                        <tr>
+                            <th>nouveau mot de passe</th>
                             <td><input name="iPassword" type="password"></td>
                         </tr>
                         <tr>
@@ -101,6 +107,21 @@ session_start();
                         </tr>
                     </table>
                 </form>
+
+                <!-- Upload a picture -->
+                <h4>Changer de photo de profil</h4>
+                <form id="idFormP" name="manFormP" method="post" enctype="multipart/form-data" action="chkSendFile.php">
+                    <img src='../../userContent/profilePicture/<?php echo $_SESSION['namPseudo'] ?>.jpg' alt="Image non définie" width="500px">
+                    <br>
+                    <label for="filfileToUpload">Nouvelle Image :</label>
+
+                    <input type="hidden" name="MAX_FILE_SIZE" id="MAX_FILE_SIZE" value="2097152"/>
+
+                    <input type="file" accept=".jpg" name="filfileToUpload" id="filfileToUpload"/>
+                    <br><br>
+                    <input type="submit" name="btnSend" id="btnSend" value="Envoyer l'image">
+                </form>
+
                 <br>
                 <br>
 

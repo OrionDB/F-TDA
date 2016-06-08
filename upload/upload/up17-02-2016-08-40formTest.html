@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<!--
+// Author : baltenspda
+// Date : 13.01.16
+// Summary : The main form of the html recapitulation
+-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Form for learn JS</title>
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+<body>
+    <form onsubmit="return alertSubmit(this)">
+        <p>Nom  <input id="nameId" type="text" name="lastName"> </p>
+        <p>Prénom  <input type="text" name="firstName"> </p>
+        <p>Email  <input type="text" name="email"> </p>
+        <p>Date de naissance <input type="text" name="bornDate"> </p>
+        <p>Années scolaire en cours
+            <SELECT name="schoolYear" >
+                <option></option>
+                <OPTION>10ème HS</OPTION>
+                <OPTION>11ème HS</OPTION>
+                <OPTION>Autre</OPTION>
+            </SELECT>
+        </p>
+        <p>Métier désiré
+            <input type="radio" name="job" value="INF" checked> Informaticien
+            <input type="radio" name="job" value="AUT"> Automaticien
+            <input type="radio" name="job" value="BOI"> Bois
+            <input type="radio" name="job" value="ELE"> Electronique
+            <input type="radio" name="job" value="MEC"> Mécanique auto
+            <input type="radio" name="job" value="POL"> Polymécanique
+        </p>
+        <p>Date du stage
+            <input type="checkbox" name="dateStage"> 29.02.2016
+            <input type="checkbox" name="dateStage"> 31.04.2016
+            <input type="checkbox" name="dateStage"> 31.06.2016
+            <input type="checkbox" name="dateStage"> 31.09.2016
+        </p>
+
+        <p>Remarque
+            <input type="checkbox" id="textZone" onclick="return toggle_textArea(this,'textArea');"></br>
+            <textarea id="textArea" style="display:none;">test</textarea>
+        </p>
+        <input type="submit" name="submit" value="Soumettre" >
+    </form>
+
+</body>
+</html>

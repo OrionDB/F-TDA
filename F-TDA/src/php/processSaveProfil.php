@@ -40,5 +40,5 @@ if(isset($_POST['iPseudo']) AND isset($_POST['iMail'])){
     // Error message
     echo '<body onLoad="alert(\'Toutes les informations ne sont pas correctement entrées.\')"> ';
     // Return to main page
-    echo '<meta http-equiv="refresh" content="0;URL=forums.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=myProfile.php">';
 }

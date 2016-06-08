@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+// Author : baltenspda
+// Date : 16.02.2016
+// Summary : form for test the upload of file
+-->
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <form id="idForm" name="manForm" method="post" enctype="multipart/form-data" action="chkSendFile.php">
+            <p>
+                <label for="filfileToUpload">Fichier à télécharger</label>
+
+                <input type="hidden" name="MAX_FILE_SIZE" id="MAX_FILE_SIZE" value="2097152"/>
+
+                <input type="file" name="filfileToUpload" id="filfileToUpload"/>
+            </p>
+
+            <p>
+                <input type="submit" name="btnSend" id="btnSend" value="Envoyer le fichier">
+            </p>
+
+        </form>
+
+    </body>
+</html>
