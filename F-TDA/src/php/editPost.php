@@ -68,6 +68,10 @@
                           </tr>
                           <form name="fNewPost" method="post" action="processEditPost.php">
 
+                            <input type="hidden" value="<?php echo $_GET['id'] ?>" name="id">
+                            <input type="text" value="<?php echo $_GET['url'] ?>" name="URL">
+                            <input type="text" value="<?php echo $_GET['name'] ?>" name="name">
+
                                   <tr>
                                       <th colspan="2" class="tNtd"><h6>Edit Post :</h6></th>
                                   </tr>
@@ -94,7 +98,7 @@
                                       <td class="tMeta2">Souligné : [u][/u]</td>
                                   </tr>
                                   <tr>
-                                      <td colspan="2" class="tNtd"><input type="submit"></td>
+                                      <td colspan="2" class="tNtd"><input type="submit" value="Enregistrer"></td>
                                   </tr>
 
                               <?php //echo"<input name=\"topicId\" type='hidden' value='$_GET[id]'>"; ?>

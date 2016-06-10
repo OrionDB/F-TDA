@@ -59,12 +59,43 @@
 		<div class="wrapper">
 		  <div class="content-wrapper">
 			<div class="content">
-			  <h4><?php echo $_GET['name'] ?></h4>
 
 
-                <?php $name = $_GET['name']; ?>
 
-			  <!-- Start First List 1 columns -->
+                <?php $name = $_GET['name'];
+
+                $actualAccreditation = $work->getForAccreditationById($_GET['id']);
+
+                // Define a store variable
+                $printF = false;
+                // Check if the current Accreditation is in the function Accreditation
+                foreach($_SESSION['Accreditation'] as $acc){
+
+                if($printF == false){
+                if($acc['funAccreditation'] == $actualAccreditation[0]['forAccreditation']){
+                $printF = true;
+                }
+                }
+                }
+
+                // Check if the current accreditation is in the rank Accreditation
+                foreach($_SESSION['rankAccreditation'] as $acc){
+                if($printF == false){
+                if($acc == $actualAccreditation[0]['forAccreditation']){
+                $printF = true;
+                }
+                }
+                }
+
+                // Check if the user is allowed to see want they are in this forum
+                if($printF == false){
+                echo "<blockquote>Vous n'avez pas accès à ce contenu, veuillez contacter un officier supérieur si il s'agit d'une erreur.</blockquote>";
+                }elseif($printF == true){
+
+
+                ?>
+
+                    <h4><?php echo $_GET['name'] ?></h4>
 			  
 				  <dl>
                       <table>
@@ -116,6 +147,10 @@
                           ?>
                       </table>
 
+
+                      <?php
+                      if(isset($_SESSION['namPseudo'])){
+                      ?>
                       <table class="tNPostT">
                           <tr>
                               <th colspan="2" class="tNtd2"></th>
@@ -158,7 +193,14 @@
 
 
                       </table>
+                      <?php
+                      }
+                      ?>
 				  </dl>
+
+                <?php
+                }
+                ?>
 			  <!-- End First List -->
 			</div>
 		  </div>

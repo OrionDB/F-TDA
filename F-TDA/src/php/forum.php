@@ -59,8 +59,50 @@
 			  <h4>Forums</h4>
 			  
 			  <!-- Start First List 1 columns -->
-			  
+
+                <?php
+
+                // Find the current level of Accreditation
+                foreach($forums as $forum){
+                    if($forum['forName'] == $_GET['id']){
+                        $actualAccreditation = $forum['forAccreditation'];
+                    }
+                }
+
+                // Define a store variable
+                $printF = false;
+                // Check if the current Accreditation is in the function Accreditation
+                foreach($_SESSION['Accreditation'] as $acc){
+
+                    if($printF == false){
+                        if($acc['funAccreditation'] == $actualAccreditation){
+                            $printF = true;
+                        }
+                    }
+                }
+
+                // Check if the current accreditation is in the rank Accreditation
+                foreach($_SESSION['rankAccreditation'] as $acc){
+                    if($printF == false){
+                        if($acc == $actualAccreditation){
+                            $printF = true;
+                        }
+                    }
+                }
+
+                // Check if the user is allowed to see want they are in this forum
+                if($printF == false){
+                    echo "<blockquote>Vous n'avez pas accès à ce contenu, veuillez contacter un officier supérieur si il s'agit d'une erreur.</blockquote>";
+                }elseif($printF == true){
+
+
+                ?>
+
 				  <dl>
+
+
+
+
                       <table>
 
 
@@ -147,32 +189,38 @@
                         </table>
 				  </dl>
 
-                <h4>Sujets</h4>
+                    <h4>Sujets</h4>
 
-                <blockquote>
-                    <table>
-                        <?php
-                        ///if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
-                            $subjects = $work->getSubjectsByForumName($_GET['id']);
-                            //print_r($subjects[0]);
-                            //echo $subjects[0]['subTitle'];
+                    <blockquote>
+                        <table>
+                            <?php
+                            ///if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
+                                $subjects = $work->getSubjectsByForumName($_GET['id']);
+                                //print_r($subjects[0]);
+                                //echo $subjects[0]['subTitle'];
 
-                            foreach($subjects as $subject){
-                                echo("
-                                <tr>
-                                    <th class=\"subTitle\"><a href=\"topic.php?id=$subject[idSubject]&name=$subject[subTitle]\">$subject[subTitle]</a></th>
-                                    <td class=\"subAuthor\">$subject[memPseudo]</td>
-                                    <td class=\"subAnswer\">6</td>
-                                    <td class=\"subLast\">Iota</td>
-                                </tr>
-                                ");
-                            }
+                                foreach($subjects as $subject){
+                                    echo("
+                                    <tr>
+                                        <th class=\"subTitle\"><a href=\"topic.php?id=$subject[idSubject]&name=$subject[subTitle]\">$subject[subTitle]</a></th>
+                                        <td class=\"subAuthor\">$subject[memPseudo]</td>
+                                        <td class=\"subAnswer\">6</td>
+                                        <td class=\"subLast\">Iota</td>
+                                    </tr>
+                                    ");
+                                }
 
 
-                        //}
-                        ?>
-                    </table>
-                </blockquote>
+                            //}
+                            ?>
+                        </table>
+                    </blockquote>
+
+                <?php
+                }else{
+                    echo "<blockquote>Vous n'avez pas accès à ce contenu, veuillez contacter un officier supérieur si il s'agit d'une erreur.</blockquote>";
+                }
+                ?>
 			  <!-- End First List -->
 			</div>
 		  </div>

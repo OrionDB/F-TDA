@@ -402,10 +402,11 @@ class DbAccess {
     /**
      * This function will validate and do the edit of the post
      * @param $id
+     * @param $text
      */
-    public function editPostById($id){
+    public function editPostById($id, $text){
 
-        $req = "UPDATE t_post SET posText = 'test beta gamma' WHERE t_post.idPost = 8;";
+        $req = "UPDATE t_post SET posText = '$text' WHERE idPost = '$id';";
         $this->executeSqlRequest($req);
         return;
     }// End editPostById
@@ -459,6 +460,17 @@ class DbAccess {
         $text = str_replace("[/color]","</span>",$text);
 
         return $text;
-    }
+    }// End translateBBCode
+
+    /**
+     * This function will return the Accreditation number of the forum
+     * @param $id
+     * @return array
+     */
+    public function getForAccreditationById($id){
+        $req = "SELECT forAccreditation FROM t_Subject natural join t_forum where idSubject = '$id'";
+        $result = $this->executeSqlRequest($req);
+        return $result;
+    }// End getForAccreditationById
 
 }
