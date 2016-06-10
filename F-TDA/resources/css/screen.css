@@ -449,3 +449,15 @@ body.bProfile li.lProfile a
 .tNPostTxt{
     padding:10px;
 }
+
+.UnderLine{
+    text-decoration: underline;
+}
+
+.Italic{
+    font-style: italic;
+}
+
+.Bold{
+    font-weight: bold;
+}

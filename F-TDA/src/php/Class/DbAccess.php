@@ -362,7 +362,7 @@ class DbAccess {
     public function getAllPostsBySubjectId($id){
 
         // Define the Sql Request
-        $req="SELECT posText, memPseudo, memPFunction, graName, funName, idSubject, graColor from t_post natural join t_member natural join t_grade inner join t_function on idFunction = memPFunction Where idSubject = '$id'";
+        $req="SELECT posText, memPseudo, memPFunction, graName, funName, idSubject, graColor, idPost from t_post natural join t_member natural join t_grade inner join t_function on idFunction = memPFunction Where idSubject = '$id' AND posIsDeleted = 0 order by idPost";
 
         // Execute the request
         $result = $this->executeSqlRequest($req);
@@ -370,6 +370,12 @@ class DbAccess {
         return $result;
     }// End getAllPostsBySubjectId
 
+    /**
+     * This function allow create a post
+     * @param $name = this is the name of the user
+     * @param $post = This is the content of the post
+     * @param $topic = This is the subject of the post
+     */
     public function addPost($name, $post, $topic){
         // define the sql request
         $req = "INSERT INTO db_alpha.t_post (idPost, posText, idMember, idSubject) VALUES (NULL, '$post', (SELECT idMember from t_member where memPseudo = '$name'), '$topic')";
@@ -378,6 +384,81 @@ class DbAccess {
         $this->executeSqlRequest($req);
 
         return ;
+    }// End addPost
+
+    /**
+     * This function will set the attribute posIsDeleted to 1 for forget this post to be printed
+     * @param $id = Thois is the id of the post we will hide;
+     */
+    public function deletePostById($id){
+
+        $req = "UPDATE t_post SET posIsDeleted = '1' WHERE idPost = '$id';";
+
+        $this->executeSqlRequest($req);
+
+        return;
+    }// End deletePostById
+
+    /**
+     * This function will validate and do the edit of the post
+     * @param $id
+     */
+    public function editPostById($id){
+
+        $req = "UPDATE t_post SET posText = 'test beta gamma' WHERE t_post.idPost = 8;";
+        $this->executeSqlRequest($req);
+        return;
+    }// End editPostById
+
+    /**
+     * This function allow find a post with this id
+     * @param $id
+     * @return array
+     */
+    public function findPostById($id){
+        $req = "SELECT posText FROM t_post where idPost = '$id'";
+        $result = $this->executeSqlRequest($req);
+        return $result;
+    }// End findPostById
+
+    /**
+     * This function will reverse te translate of BBCode into HTML
+     * @param $text
+     * @return mixed
+     */
+    public function reverseBBCode($text){
+
+        $text = str_replace("<i>","[i]",$text);
+        $text = str_replace("</i>","[/i]",$text);
+        $text = str_replace("</u>","[/u]",$text);
+        $text = str_replace("<u>","[u]",$text);
+        $text = str_replace("<b>","[b]",$text);
+        $text = str_replace("</b>","[/b]",$text);
+        $text = str_replace("<span style=\"color: ","[color = \"",$text);
+        $text = str_replace("\">","\"]",$text);
+        $text = str_replace("</span>","[/color]",$text);
+
+        return $text;
+    }// End reverseBBCode
+
+    /**
+     * This function will translate the code into BBCode
+     * @param $text
+     * @return string
+     */
+    public function translateBBCode($text){
+
+        $text = str_replace("[i]","<i>",$text);
+        $text = str_replace("[/i]","</i>",$text);
+        $text = str_replace("[/u]","</u>",$text);
+        $text = str_replace("[u]","<u>",$text);
+        $text = str_replace("[b]","<b>",$text);
+        $text = str_replace("[/b]","</b>",$text);
+        $text = str_replace("[color = \"","<span style=\"color: ",$text);
+        $text = str_replace("\"]","\">",$text);
+        $text = str_replace("[/color]","</span>",$text);
+
+        return $text;
     }
 
 }

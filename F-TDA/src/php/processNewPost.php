@@ -21,15 +21,7 @@ if(isset($_POST['Post'])){
     //echo $_POST['Post']."<br>";
     //echo $_POST['topicId']."<br>";
 
-    $text = str_replace("[i]","<i>",$_POST['Post']);
-    $text = str_replace("[/i]","</i>",$text);
-    $text = str_replace("[/u]","</u>",$text);
-    $text = str_replace("[u]","<u>",$text);
-    $text = str_replace("[b]","<b>",$text);
-    $text = str_replace("[/b]","</b>",$text);
-    $text = str_replace("[color = \"","<span style=\"color: ",$text);
-    $text = str_replace("\"]","\">",$text);
-    $text = str_replace("[/color]","</span>",$text);
+    $text = $dba->translateBBCode($_POST['Post']);
 
     //style=\"color: $color;\"
 

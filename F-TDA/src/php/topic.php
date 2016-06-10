@@ -9,6 +9,8 @@
     <?php
     session_start();
 
+    $URL = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
     // Set the $_session['Accreditation'] variable to 0 if the variable is not set
     if(!isset($_SESSION['Accreditation'][0]['funAccreditation'])){
         $_SESSION['Accreditation'][0]['funAccreditation'] = 0;
@@ -46,15 +48,9 @@
         include("Class/DbAccess.php");
         $work = new DbAccess();
 
-        //print_r($_GET);
-
         $posts = $work->getAllPostsBySubjectId($_GET['id']);
 
-        //echo"<br><br><br>";
-        //print_r($posts);
 
-        // get all forums and store it into a variable
-        //$forums = $work->getAllForumsFirstLevel();
 
         ?>
 
@@ -64,7 +60,10 @@
 		  <div class="content-wrapper">
 			<div class="content">
 			  <h4><?php echo $_GET['name'] ?></h4>
-			  
+
+
+                <?php $name = $_GET['name']; ?>
+
 			  <!-- Start First List 1 columns -->
 			  
 				  <dl>
@@ -95,11 +94,23 @@
                                     </tr>
                                     <tr>
                                         <td class=\"tMeta\">$post[funName]</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan=\"2\" class=\"tEndPost\"></td>
-                                    </tr>
-                                ";
+                                    </tr>";
+                                for($i = 0; $i<count($_SESSION['Accreditation']);$i++){
+
+                                    if($_SESSION['Accreditation'][$i]['funAccreditation'] == 33){
+
+                                        echo "<tr>
+                                            <td colspan=\"2\" class=\"tEndPost\"><a href='editPost.php?id=$post[idPost]&url=$URL&name=$name'>Editer</a>&nbsp;&nbsp;&nbsp;<a href='deletePost.php?id=$post[idPost]&url=$URL&name=$name'>Supprimer</a></td>
+                                            </tr>";
+                                        break;
+                                    }else{
+                                        echo "<tr>
+                                                <td colspan=\"2\" class=\"tEndPost\"></td>
+                                            </tr>";
+                                        break;
+                                    }
+
+                                }
                             }
 
                           ?>
@@ -122,7 +133,7 @@
                                       <td class="tMeta2">Italique : [i][/i]</td>
                                   </tr>
                                   <tr>
-                                      <td class="tMeta2">Couleur : [color = ""][/color]</td>
+                                      <td class="tMeta2">Couleur : [color = "couleur"][/color]</td>
                                   </tr>
                                   <tr>
                                       <td class="tMeta2">Gras : [b][/b]</td>
