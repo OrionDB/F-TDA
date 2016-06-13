@@ -59,7 +59,6 @@ class DbAccess {
      */
     public function getAllForumsFirstLevel(){
         // Define the request
-        //$query = 'SELECT * FROM t_forum Where forAddiction = 0';
         $query = 'SELECT * FROM t_forum ORDER BY forAddiction';
 
         // send the request in the right function and store the result in a variable
@@ -101,7 +100,6 @@ class DbAccess {
 
             // Check if the member is registered
             foreach($members as $member){
-            //while($member = $members->fetch()){
                 if ($member['memPseudo'] == $_POST['userName'] && password_verify($_POST['userPassword'],$member["memPassword"])) {
                     // We start the Session
                     session_start ();
@@ -120,21 +118,9 @@ class DbAccess {
 
                     $_SESSION['Accreditation'] = $funAcc;
                     $_SESSION['rankAccreditation'] = $rankAcc;
-                    //$_SESSION['rankAccreditation'] = $member['graAccreditation'];
 
                     // disengage the error message
                     $Error = false;
-
-                    //print $_SESSION['namPseudo'];
-
-
-                    //Find the original URL
-                    //$URL = $_POST['namURL'];
-
-                    // Return to other page
-                    //header("location: $URL");
-
-                    //header ("location: ../index.php");
                     break;
                 }
                 else {
@@ -176,13 +162,13 @@ class DbAccess {
 
             $this->executeSqlRequest($req);
 
-            //$this->Login();
+            // Define the Post variable for login
+            $_POST['userName'] = $Pseudo;
+            $_POST['userPassword'] = $_POST['iPassword'];
 
-            //Find the original URL
-            //$URL = $_POST['namURL'];
+            $this->Login();
 
             // Return to other page
-            //header("location: $URL");
             header("location : forums.php");
 
         }else{
@@ -377,8 +363,12 @@ class DbAccess {
      * @param $topic = This is the subject of the post
      */
     public function addPost($name, $post, $topic){
+        // Define the current time
+        $date = date("d.m.Y-H:i");
+
         // define the sql request
-        $req = "INSERT INTO db_alpha.t_post (idPost, posText, idMember, idSubject) VALUES (NULL, '$post', (SELECT idMember from t_member where memPseudo = '$name'), '$topic')";
+        $req = "INSERT INTO db_alpha.t_post (idPost, posText, posDate, idMember, idSubject) VALUES (NULL, '$post', '$date',(SELECT idMember from t_member where memPseudo = '$name'), '$topic')";
+        //INSERT INTO `db_alpha`.`t_post` (`idPost`, `posText`, `posDate`, `posIsDeleted`, `idMember`, `idSubject`) VALUES (NULL, 'sefsfefefsdfsefsefsef', '31.05.2016-18:30', '0', '12', '29');
 
         // Execute Request
         $this->executeSqlRequest($req);
@@ -472,5 +462,58 @@ class DbAccess {
         $result = $this->executeSqlRequest($req);
         return $result;
     }// End getForAccreditationById
+
+    /**
+     * This function will return the name and the date of the last post
+     * @param $subName = This is the subject name
+     * @return array
+     */
+    public function getLastPostInSubject($subName){
+
+        $req = "SELECT posDate,  memPseudo, subTitle FROM t_subject left outer join t_post on t_post.idSubject = t_subject.idSubject inner join t_member on T_post.idMember = t_member.idMember natural join t_forum where posIsDeleted = 0 AND subTitle = '$subName' order by posDate Limit 1";
+        $result = $this->executeSqlRequest($req);
+        return $result;
+    }// End getLastPostInSubject
+
+    /**
+     * This function will count the number of answer and return it
+     * @param $name = this is the name of the subject
+     * @return array
+     */
+    public function getNbrAnswerInPostByPosName($name){
+
+        $req = "SELECT count(idPost) as nbrAnswer from t_post inner join t_subject on t_post.idSubject = t_subject.idSubject where posIsDeleted = 0 AND subTitle ='$name'";
+        $result = $this->executeSqlRequest($req);
+        return $result;
+    }//End getNbrAnswerInPostByPosName
+
+    /**
+     * This function will create a topic
+     * @param $name = The name of the topic
+     * @param $forum = the forum where the topic are create
+     * @param $author = The id of the author
+     * @param $post = The main post
+     */
+    public function createTopic($name, $forum, $author, $post){
+
+        echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />";
+
+        $req = "INSERT INTO db_alpha.t_subject (idSubject, subTitle, idMember, idForum) VALUES (NULL, '$name', (SELECT idMember from t_member where memPseudo = '$author'), (SELECT idForum from t_forum where forName ='$forum'));";
+        $this->executeSqlRequest($req);
+
+        //echo $name." ".$forum." ".$author." ".$post;
+
+        $req2 = "SELECT idSubject FROM t_subject order by idSubject desc limit 1";
+
+        $id = $this->executeSqlRequest($req2);
+
+        print_r($id);
+
+        $topic = $id[0]['idSubject'];
+
+        $this->addPost($author,$post,$topic);
+
+        return $topic;
+    }// End createTopic
 
 }

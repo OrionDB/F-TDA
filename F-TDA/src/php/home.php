@@ -54,11 +54,9 @@
 				  </dl>
 
                 <?php
-                    $stringOrig = "ceci est un texte [i]italique[/i]";
-                    echo $stringOrig;
-                    $stringEdit = str_replace("[i]","<i>", $stringOrig);
-                    $stringEdit = str_replace("[/i]","</i>",$stringEdit);
-                    echo "<br><br>$stringEdit";
+                    echo date("d.m.Y-H:i");
+
+                    echo "<br><br>".$_SESSION['namPseudo'];
                 ?>
 
 

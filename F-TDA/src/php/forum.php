@@ -141,7 +141,7 @@
                                                         <tr>
                                                             <td class=\"forDescription\"><em>$forum[forDescription]</em></td>
                                                             <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
-                                                            <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
+                                                            <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016-18:30</td>
                                                         </tr>
                                                     </table>
                                                 </dd>");
@@ -153,7 +153,7 @@
                                                         <tr>
                                                             <td class=\"forDescriptionl2\"><em>$forum[forDescription]</em></td>
                                                             <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
-                                                            <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
+                                                            <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016-18:30</td>
                                                         </tr>
                                                     </table>
                                                 </dd>");
@@ -173,7 +173,7 @@
                                                             <tr>
                                                                 <td class=\"forDescription\"><em>$forum[forDescription]</em></td>
                                                                 <td class=\"forNbrSubjectsInForum\">$nbrSub</td>
-                                                                <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016</td>
+                                                                <td class=\"forLastMessage\">OrionDB,<br> 31.05.2016-18:30</td>
                                                             </tr>
                                                         </table>
                                                     </dd>");
@@ -200,12 +200,20 @@
                                 //echo $subjects[0]['subTitle'];
 
                                 foreach($subjects as $subject){
+
+                                    $lastPost = $work->getLastPostInSubject($subject['subTitle']);
+                                    $nbrAnswer = $work->getNbrAnswerInPostByPosName($subject['subTitle']);
+
+                                    $lastPseudo = $lastPost[0]['memPseudo'];
+                                    $lastHour = $lastPost[0]['posDate'];
+                                    $nbr = $nbrAnswer[0]['nbrAnswer'] -1;
+
                                     echo("
                                     <tr>
                                         <th class=\"subTitle\"><a href=\"topic.php?id=$subject[idSubject]&name=$subject[subTitle]\">$subject[subTitle]</a></th>
                                         <td class=\"subAuthor\">$subject[memPseudo]</td>
-                                        <td class=\"subAnswer\">6</td>
-                                        <td class=\"subLast\">Iota</td>
+                                        <td class=\"subAnswer\">$nbr</td>
+                                        <td class=\"subLast\">$lastPseudo le<br> $lastHour</td>
                                     </tr>
                                     ");
                                 }
@@ -213,6 +221,10 @@
 
                             //}
                             ?>
+
+                            <tr>
+                                <th class="subTitle" style="text-align: center; font-size: 15px;"><a href="addTopic.php?name=<?php echo $_GET['id']?>">Nouveau Sujet</a></th>
+                            </tr>
                         </table>
                     </blockquote>
 

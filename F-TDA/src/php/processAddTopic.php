@@ -15,22 +15,16 @@ session_start();
 $dba = new DbAccess();
 
 // Check if information are entered
-if(isset($_POST['Post'])){
+if(isset($_POST['Post']) AND isset($_POST['Title'])){
 
-    //echo $_SESSION['namPseudo']."<br>";
-    //echo $_POST['Post']."<br>";
-    //echo $_POST['topicId']."<br>";
+    //print_r($_POST);
 
-    $URL = $_POST['URL']."&name=".$_POST['name'];
+    $Title = addslashes($_POST['Title']);
+    $Post = addslashes($_POST['Post']);
 
-    $text = $dba->translateBBCode($_POST['Post']);
+    $topic = $dba->createTopic($Title,$_POST['forum'],$_SESSION['namPseudo'],$_POST['Post']);
 
-    $text = addslashes($text);
-    $pseudo = addslashes($_SESSION['namPseudo']);
-
-    $dba->addPost($pseudo,$text,$_POST['topicId']);
-    // Return to main page
-
+    $URL = "topic.php?id=".$topic."&name=".$_POST['Title'];
 
     header("location: $URL");
 }else{

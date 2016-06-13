@@ -187,6 +187,8 @@
                                   </tr>
 
                               <?php echo"<input name=\"topicId\" type='hidden' value='$_GET[id]'>"; ?>
+                              <?php echo"<input name=\"name\" type='hidden' value='$_GET[name]'>"; ?>
+                              <?php echo"<input name=\"URL\" type='hidden' value='$URL'>"; ?>
 
 
                           </form>
