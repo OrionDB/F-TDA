@@ -108,6 +108,8 @@
 
                           <?php
 
+                          $allNbrSubject = $work->getNbrSubjectsInAllForums();
+
                             // Search the Root addiction of the actual forum
                             foreach($forums as $sad){
 
@@ -119,6 +121,12 @@
                             // Print All the forum of the selected level
                             foreach($forums as $forum){
 
+                                foreach($allNbrSubject as $forNbrSub){
+                                    if($forNbrSub['forName'] == $forum['forName']){
+                                        $nbrSub = $forNbrSub['NbrSubject'];
+                                    }
+                                }
+
                                 // Check the number of forums we must print
                                 for($i = 0;$i<count($_SESSION['Accreditation']) + count($_SESSION['rankAccreditation']);$i++){
 
@@ -127,10 +135,7 @@
 
                                         // Check if we have the accreditation for print this forum
                                         if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
-                                            //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
-                                            //print_r($nbrSubjectsInTheForum);
-                                            //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
-                                            $nbrSub = 1;
+                                            //$nbrSub = 1;
 
                                             // Check if the forum is in the first level or the second one
                                             if(preg_match("/^[0-9][.][0-9]$/",$forum['forAddiction'])){
@@ -161,10 +166,7 @@
                                         }
                                     }elseif(strncmp($forum['forAddiction'],$alpha,3) == 0 && preg_match("/^[0-9][.][0-9]{2}$/",$forum['forAddiction']) && $_GET['id'] != $forum['forName']){
                                         if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
-                                            //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
-                                            //print_r($nbrSubjectsInTheForum);
-                                            //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
-                                            $nbrSub = 1;
+                                            //$nbrSub = 1;
 
                                             echo("<tr>
                                                     <dt class=\"forName\"><a href=\"forum.php?id=$forum[forName]\">$forum[forName]</a></dt>
@@ -196,17 +198,21 @@
                             <?php
                             ///if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
                                 $subjects = $work->getSubjectsByForumName($_GET['id']);
-                                //print_r($subjects[0]);
-                                //echo $subjects[0]['subTitle'];
+
+                                $nbrAllAnswer = $work->getAllNbrAnswerByForumName($_GET['id']);
 
                                 foreach($subjects as $subject){
 
-                                    $lastPost = $work->getLastPostInSubject($subject['subTitle']);
-                                    $nbrAnswer = $work->getNbrAnswerInPostByPosName($subject['subTitle']);
+                                    foreach($nbrAllAnswer as $nbrAnswer){
+                                        if($nbrAnswer['subTitle'] == $subject['subTitle']){
+                                            $nbr = $nbrAnswer['nbrAnswer']-1;
+                                        }
+                                    }
+
+                                    //$lastPost = $work->getLastPostInSubject($subject['subTitle']);
 
                                     $lastPseudo = $lastPost[0]['memPseudo'];
                                     $lastHour = $lastPost[0]['posDate'];
-                                    $nbr = $nbrAnswer[0]['nbrAnswer'] -1;
 
                                     echo("
                                     <tr>

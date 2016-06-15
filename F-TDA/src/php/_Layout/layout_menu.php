@@ -9,6 +9,12 @@
                 <li class="lMember"><a href="members.php">Membres</a></li>
                 <li class="lProfile"><a href="myProfile.php">Profil</a></li>
                 <li class="labout"><a href="#04">Messagerie</a></li>
+                <?php
+
+                if($_SESSION['rankAccreditation'][0] >= 14 ){
+                    echo "<li class=\"lAdd\"><a href=\"addForum.php\">+ Forum</a></li>";
+                }
+                ?>
                 <li class="lpseudo"><a href="#06"><?php echo $_SESSION['namPseudo'] ?></a></li>
                 <li class="lunconnect"><a href="logout.php">Déconnexion</a></li>
                 <?php

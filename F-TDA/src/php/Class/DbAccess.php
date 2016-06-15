@@ -68,22 +68,6 @@ class DbAccess {
     }// end function getAllForumsFirstLevel
 
     /**
-     * Count the number of subjects in the forum pass in parameter
-     * @param $Name = the name of the forum we want count the number of subject
-     * @return array = return the number of subjects
-     */
-    public function getNbrSubjectsInTheForum($Name){
-        // Define the query
-        $query = "SELECT COUNT(subTitle) AS nbrSubjects FROM t_forum natural join t_subject Where forName = '$Name'";
-        //$query = "SELECT forName, COUNT(subTitle) AS nbrSubjects FROM t_forum natural join t_subject GROUP BY idForum";
-
-        // send the request in the right function and store the result in a variable
-        $value = $this->executeSqlRequest($query);
-
-        return $value;
-    }// End function getNbrSubjectsInTheForum
-
-    /**
      * This function allow a member to connect
      */
     public function Login()
@@ -223,6 +207,20 @@ class DbAccess {
         // return the answer
         return $result;
     }// End getSubjectsByForumName
+
+    /**
+     * This function will get all the name and the number of subject
+     * @return array
+     */
+    public function getNbrSubjectsInAllForums(){
+        $req = "SELECT forName, count(idSubject) as NbrSubject FROM t_Subject right join t_forum on t_forum.idForum = t_subject.idForum group by forName";
+        $result = $this->executeSqlRequest($req);
+        return $result;
+    }// End getNbrSubjectsInAllForums
+
+
+
+
 
     /**
      * This function will return an array with all the member ordered by the grade
@@ -470,22 +468,22 @@ class DbAccess {
      */
     public function getLastPostInSubject($subName){
 
-        $req = "SELECT posDate,  memPseudo, subTitle FROM t_subject left outer join t_post on t_post.idSubject = t_subject.idSubject inner join t_member on T_post.idMember = t_member.idMember natural join t_forum where posIsDeleted = 0 AND subTitle = '$subName' order by posDate Limit 1";
+        $req = "SELECT posDate,  memPseudo, subTitle FROM t_subject left outer join t_post on t_post.idSubject = t_subject.idSubject inner join t_member on T_post.idMember = t_member.idMember natural join t_forum where posIsDeleted = 0 AND subTitle = '$subName' order by posDate desc Limit 1";
         $result = $this->executeSqlRequest($req);
         return $result;
     }// End getLastPostInSubject
 
     /**
-     * This function will count the number of answer and return it
-     * @param $name = this is the name of the subject
+     * This function will get all the answer for all the subject in a forum
+     * @param $name = The name of the forum we want the answer number by subject
      * @return array
      */
-    public function getNbrAnswerInPostByPosName($name){
+    public function getAllNbrAnswerByForumName($name){
 
-        $req = "SELECT count(idPost) as nbrAnswer from t_post inner join t_subject on t_post.idSubject = t_subject.idSubject where posIsDeleted = 0 AND subTitle ='$name'";
+        $req = "SELECT subTitle,count(idPost) as nbrAnswer from t_post inner join t_subject on t_post.idSubject = t_subject.idSubject natural join t_forum where posIsDeleted = 0 AND forName = '$name' group by subTitle";
         $result = $this->executeSqlRequest($req);
         return $result;
-    }//End getNbrAnswerInPostByPosName
+    }
 
     /**
      * This function will create a topic
@@ -515,5 +513,71 @@ class DbAccess {
 
         return $topic;
     }// End createTopic
+
+    /**
+     * This function will get all the Forum Name
+     * @return array
+     */
+    public function getAllForumsNameAndAddiction(){
+
+        $req = "SELECT forName, forAddiction FROM t_forum";
+        $result = $this->executeSqlRequest($req);
+        return $result;
+    }// End getAllForumsName
+
+    public function createForum($name, $desc, $own, $acc){
+
+        $forums = $this->getAllForumsNameAndAddiction();
+
+        $i = 0;
+
+        $cadd = 0;
+
+        $add = null;
+
+        if($own == "Root"){
+
+
+
+            foreach($forums as $forum){
+                if(ctype_digit($forum['forAddiction']) == true){
+                    $i++;
+                }
+            }
+
+            $cadd = $i;
+
+        }else{
+            foreach($forums as $forum){
+                if($forum['forName'] == $own){
+                    $add = $forum['forAddiction'];
+                }
+
+                if(isset($add)){
+                    foreach($forums as $searchAdd){
+                        if(preg_match("/^[$add][.][0-9]{1}$/",$searchAdd['forAddiction'])){
+                            $i += 1;
+                        }
+                    }
+                }
+            }
+
+            $cadd = $add.".".$i +0.1;
+        }
+
+        $req = "INSERT INTO t_forum (idForum, forName, forAddiction, forDescription, forAccreditation) VALUES (NULL, '$name', '$cadd', '$desc', '$acc');";
+
+        $this->executeSqlRequest($req);
+
+        $req2 = "SELECT idForum FROM t_forum order by idForum desc limit 1";
+
+        $topic = $this->executeSqlRequest($req2);
+
+        return $topic;
+
+
+    }// End createForum
+
+
 
 }

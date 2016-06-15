@@ -66,16 +66,21 @@
 
                           <?php
 
+                          $allNbrSubject = $work->getNbrSubjectsInAllForums();
+
                             // Print All the forum of the selected level
                             foreach($forums as $forum){
 
                                 for($i = 0;$i<count($_SESSION['Accreditation']) + count($_SESSION['rankAccreditation']);$i++){
 
                                         if($forum['forAccreditation'] == $_SESSION['Accreditation'][$i]['funAccreditation'] || $forum['forAccreditation'] == $_SESSION['rankAccreditation'][$i]){
-                                            //$nbrSubjectsInTheForum = $work->getNbrSubjectsInTheForum($forum['forName']);
-                                            //print_r($nbrSubjectsInTheForum);
-                                            //$nbrSub = $nbrSubjectsInTheForum[0]['nbrSubjects'];
-                                            $nbrSub = 1;
+                                            foreach($allNbrSubject as $forNbrSub){
+                                                if($forNbrSub['forName'] == $forum['forName']){
+                                                    $nbrSub = $forNbrSub['NbrSubject'];
+                                                }
+                                            }
+
+
 
                                             if(ctype_digit($forum['forAddiction']) == 1){
                                                 echo("<tr>

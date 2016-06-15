@@ -48,6 +48,23 @@
         include("Class/DbAccess.php");
         $work = new DbAccess();
 
+        for($i = 0; $i<count($_SESSION['Accreditation']);$i++){
+
+            if($_SESSION['Accreditation'][$i]['funAccreditation'] == 33){
+
+                $auth = true;
+                break;
+            }else{
+                $auth = false;
+                break;
+            }
+
+        }
+
+        if($auth == true){
+
+
+
         $text = $work->findPostById($_GET['id']);
 
         $postText = $work->reverseBBCode($text[0]['posText']);
@@ -69,8 +86,8 @@
                           <form name="fNewPost" method="post" action="processEditPost.php">
 
                             <input type="hidden" value="<?php echo $_GET['id'] ?>" name="id">
-                            <input type="text" value="<?php echo $_GET['url'] ?>" name="URL">
-                            <input type="text" value="<?php echo $_GET['name'] ?>" name="name">
+                            <input type="hidden" value="<?php echo $_GET['url'] ?>" name="URL">
+                            <input type="hidden" value="<?php echo $_GET['name'] ?>" name="name">
 
                                   <tr>
                                       <th colspan="2" class="tNtd"><h6>Edit Post :</h6></th>
@@ -115,6 +132,12 @@
 
 		</div>
         <!-- End printed the forums -->
+
+        <?php
+        }else{
+            echo "<blockquote>Vous n'avez pas accès à ce contenu, veuillez contacter un officier supérieur si il s'agit d'une erreur.</blockquote>";
+        }
+        ?>
 
         <!-- Footer -->
         <?php //include("_Layout/layout_footer.php") ?>

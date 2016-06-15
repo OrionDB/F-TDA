@@ -22,7 +22,7 @@ if(isset($_POST['Post']) AND isset($_POST['Title'])){
     $Title = addslashes($_POST['Title']);
     $Post = addslashes($_POST['Post']);
 
-    $topic = $dba->createTopic($Title,$_POST['forum'],$_SESSION['namPseudo'],$_POST['Post']);
+    $topic = $dba->createTopic($Title,$_POST['forum'],$_SESSION['namPseudo'],$Post);
 
     $URL = "topic.php?id=".$topic."&name=".$_POST['Title'];
 

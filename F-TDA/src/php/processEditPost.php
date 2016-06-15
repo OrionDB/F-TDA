@@ -15,7 +15,9 @@ $dba = new DbAccess();
 if(isset($_POST['Post'])){
     $text = $dba->translateBBCode($_POST['Post']);
 
-    $dba->editPostById($_POST['id'],$text);
+    $post = addslashes($text);
+
+    $dba->editPostById($_POST['id'],$post);
 }
     $URL = $_POST['URL']."&name=".$_POST['name'];
 

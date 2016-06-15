@@ -28,7 +28,7 @@ session_start();
 	<!-- End Header -->
 
     <!-- Start Body -->
-<body class="bRegister">
+<body class="bAdd">
         <?php include("_Layout/layout_header.php") ?>
 
             <!-- Start Navigation bar -->
@@ -39,50 +39,50 @@ session_start();
             include("Class/DbAccess.php");
             $work = new DbAccess();
 
-            if(isset($_SESSION['namPseudo'])){
+            if($_SESSION['rankAccreditation'][0] >= 14 ){
         ?>
 
 
 		<div class="wrapper">
 		  <div class="content-wrapper">
 			<div class="content">
-			  <h4>Nouveau Topic</h4>
+			  <h4>Nouveau Forum</h4>
 
 			  <!-- Start First List 1 columns -->
 
-                <form class="registerForm" method="post" action="processAddTopic.php">
+                <form class="registerForm" method="post" action="processAddForum.php">
                     <table>
                         <tr>
-                            <th class="tMeta2">Titre</th>
-                            <td><input name ="Title" type="text"></td>
+                            <th class="tMeta2">Nom du Forum</th>
+                            <td><input name ="Name" type="text"></td>
                         </tr>
                         <tr>
-                            <th class="tMeta2"><b><u>Balise Formatage</u></b></th>
-                            <td rowspan="7" class="tNPostTxt"><textarea class="tNPost" name="Post"></textarea></td>
+                            <th class="tMeta2">Description</th>
+                            <td><input name="desc" type="text"></td>
                         </tr>
                         <tr>
-                            <td class="tMeta2">Italique : [i][/i]</td>
+                            <th class="tMeta2">Rattaché à :</th>
+                            <td>
+                                <SELECT name="own" size="1">
+                                    <OPTION>Root</OPTION>
+                                    <?php
+                                    $forums = $work->getAllForumsNameAndAddiction();
+                                    foreach($forums as $forum){
+                                        echo "<OPTION>$forum[forName]</OPTION>";
+                                    }
+                                    ?>
+                                </SELECT>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="tMeta2">Couleur : [color = "couleur"][/color]</td>
-                        </tr>
-                        <tr>
-                            <td class="tMeta2">Gras : [b][/b]</td>
-                        </tr>
-                        <tr>
-                            <td class="tMeta2">Gras : [b][/b]</td>
-                        </tr>
-                        <tr>
-                            <td class="tMeta2">Gras : [b][/b]</td>
-                        </tr>
-                        <tr>
-                            <td class="tMeta2">Souligné : [u][/u]</td>
+                            <th class="tMeta2">Niveau d'accréditation</th>
+                            <td><input name="acc" type="number"></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="tNtd"><input type="submit" value="Créer"></td>
                         </tr>
                         <?php
-                        echo "<input type=\"hidden\" name='forum' value=\"$_GET[name]\">";
+                        //echo "<input type=\"hidden\" name='forum' value=\"$_GET[name]\">";
                         ?>
                     </table>
                     <br>

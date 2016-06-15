@@ -227,10 +227,22 @@ li.lregister a:active
     background-position: 0 -4px;
 }
 
+li.lAdd a:hover,
+li.lAdd a:active
+{
+    background-position: 0 -4px;
+}
+
 body.bForum li.lForum a
 {
 	color: #99bbdd;
 	background: #333333 url(../images/navigation_hover.gif) 0 -2px repeat;
+}
+
+body.bAdd li.lAdd a
+{
+    color: #99bbdd;
+    background: #333333 url(../images/navigation_hover.gif) 0 -2px repeat;
 }
 
 body.bhome li.lhome a
