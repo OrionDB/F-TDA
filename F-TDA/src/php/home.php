@@ -8,6 +8,10 @@
 
     <?php
         session_start();
+
+    // Include the class and create the work variable
+    include("Class/DbAccess.php");
+    $work = new DbAccess();
     ?>
 
 	<!-- Start Header -->
@@ -54,9 +58,10 @@
 				  </dl>
 
                 <?php
-                    echo date("d.m.Y-H:i");
 
-                    echo "<br><br>".$_SESSION['namPseudo'];
+                $result = $work->test();
+                print_r($result);
+
                 ?>
 
 

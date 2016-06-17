@@ -578,6 +578,11 @@ class DbAccess {
 
     }// End createForum
 
+    public function test(){
+        $req="CALL gamma();";
+        return $this->executeSqlRequest($req);
+    }
+
 
 
 }

@@ -209,7 +209,7 @@
                                         }
                                     }
 
-                                    //$lastPost = $work->getLastPostInSubject($subject['subTitle']);
+                                    $lastPost = $work->getLastPostInSubject($subject['subTitle']);
 
                                     $lastPseudo = $lastPost[0]['memPseudo'];
                                     $lastHour = $lastPost[0]['posDate'];
