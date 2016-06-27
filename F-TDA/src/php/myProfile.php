@@ -41,7 +41,9 @@ session_start();
 
             //print_r($_SESSION);
 
-            $me = $work->getMemberByName($_SESSION['namPseudo']);
+            $name = addslashes($_SESSION['namPseudo']);
+
+            $me = $work->getMemberByName($name);
             //echo "<br><br>";
             //print_r($me);
 

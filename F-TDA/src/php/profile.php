@@ -44,6 +44,10 @@
                 <?php
                 if(isset($_SESSION['namPseudo'])){
 
+                    $name = $_GET['id'];
+
+                    $_GET['id'] = addslashes($_GET['id']);
+
                     // Find the information about the member
                     $member = $work->getMemberByName($_GET['id']);
 
@@ -54,7 +58,7 @@
 
                 ?>
 			  <!-- Start First List 1 columns -->
-                    <h4><?php echo $_GET['id']?></h4>
+                    <h4><?php echo $name?></h4>
 
 				  <dl>
 					<table class="pTable">

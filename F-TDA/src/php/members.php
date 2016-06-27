@@ -65,6 +65,8 @@
                             foreach($members as $member){
                                 $color = $member['graColor'];
 
+                                //$member['memPseudo'] = addslashes($member['memPseudo']);
+
                                 echo("
                                     <tr>
                                         <td class=\"mPseudo\" ><a href=\"profile.php?id=$member[memPseudo]\" style=\"color: $color;\">$member[memPseudo]</a></td>

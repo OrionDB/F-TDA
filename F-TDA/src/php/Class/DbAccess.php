@@ -96,6 +96,7 @@ class DbAccess {
 
                     $rankAcc = array();
 
+                    // Store the grade Accreditation and less
                     for($u = $member['graAccreditation'];$u >=0;$u--){
                         $rankAcc[] = $u;
                     }
