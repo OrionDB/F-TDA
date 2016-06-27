@@ -4,6 +4,12 @@
 
 
 #------------------------------------------------------------
+# DataBase: db_alpha
+#------------------------------------------------------------
+
+CREATE DATABASE db_alpha;
+
+#------------------------------------------------------------
 # Table: t_member
 #------------------------------------------------------------
 
@@ -14,6 +20,7 @@ CREATE TABLE t_member(
         memEnterDate Date NOT NULL ,
         memPassword  Varchar (60) NOT NULL ,
         memVarious   Varchar (600) ,
+        memPFunction Int ,
         idGrade      Int NOT NULL ,
         PRIMARY KEY (idMember )
 )ENGINE=InnoDB;
@@ -27,6 +34,7 @@ CREATE TABLE t_grade(
         idGrade          int (11) Auto_increment  NOT NULL ,
         graName          Varchar (30) NOT NULL ,
         graDescription   Varchar (120) ,
+        graColor         Varchar (100) ,
         graAccreditation Int NOT NULL ,
         PRIMARY KEY (idGrade )
 )ENGINE=InnoDB;
@@ -63,10 +71,12 @@ CREATE TABLE t_subject(
 #------------------------------------------------------------
 
 CREATE TABLE t_post(
-        idPost    int (11) Auto_increment  NOT NULL ,
-        posText   Longtext NOT NULL ,
-        idMember  Int NOT NULL ,
-        idSubject Int NOT NULL ,
+        idPost       int (11) Auto_increment  NOT NULL ,
+        posText      Longtext NOT NULL ,
+        posDate      Varchar (16) ,
+        posIsDeleted Int ,
+        idMember     Int NOT NULL ,
+        idSubject    Int NOT NULL ,
         PRIMARY KEY (idPost )
 )ENGINE=InnoDB;
 
@@ -86,10 +96,10 @@ CREATE TABLE t_forum(
 
 
 #------------------------------------------------------------
-# Table: Have
+# Table: HaveFunction
 #------------------------------------------------------------
 
-CREATE TABLE Have(
+CREATE TABLE HaveFunction(
         idMember   Int NOT NULL ,
         idFunction Int NOT NULL ,
         PRIMARY KEY (idMember ,idFunction )
@@ -100,5 +110,5 @@ ALTER TABLE t_subject ADD CONSTRAINT FK_t_subject_idMember FOREIGN KEY (idMember
 ALTER TABLE t_subject ADD CONSTRAINT FK_t_subject_idForum FOREIGN KEY (idForum) REFERENCES t_forum(idForum);
 ALTER TABLE t_post ADD CONSTRAINT FK_t_post_idMember FOREIGN KEY (idMember) REFERENCES t_member(idMember);
 ALTER TABLE t_post ADD CONSTRAINT FK_t_post_idSubject FOREIGN KEY (idSubject) REFERENCES t_subject(idSubject);
-ALTER TABLE Have ADD CONSTRAINT FK_Have_idMember FOREIGN KEY (idMember) REFERENCES t_member(idMember);
-ALTER TABLE Have ADD CONSTRAINT FK_Have_idFunction FOREIGN KEY (idFunction) REFERENCES t_function(idFunction);
+ALTER TABLE HaveFunction ADD CONSTRAINT FK_HaveFunction_idMember FOREIGN KEY (idMember) REFERENCES t_member(idMember);
+ALTER TABLE HaveFunction ADD CONSTRAINT FK_HaveFunction_idFunction FOREIGN KEY (idFunction) REFERENCES t_function(idFunction);
